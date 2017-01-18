@@ -49,3 +49,14 @@ ul.NewsList li{
     width: 650px;
     height: 350px;
 }
+
+
+.col-centered{
+    float: none;
+    margin: 0 auto;
+}
+
+
+.center-container{
+    text-align: center;
+}
