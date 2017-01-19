@@ -12,7 +12,8 @@ body {
   font-family: 'Merriweather', 'Helvetica Neue', Arial, sans-serif;
 }
 hr {
-  border-color: #F05F40;
+  /*border-color: #F05F40;*/
+  border-color: #ca6cca;
   border-width: 3px;
   max-width: 50px;
 }
@@ -90,7 +91,7 @@ aside {
 .navbar-default .nav > li > a:focus {
   text-transform: uppercase;
   font-weight: 700;
-  font-size: 13px;
+  font-size: 20px;
   color: #222222;
 }
 .navbar-default .nav > li > a:hover,
@@ -282,7 +283,8 @@ header .header-content .header-content-inner p {
   margin: 0 auto 20px;
 }
 .text-primary {
-  color: #F05F40;
+  /*color: #F05F40;*/
+  color: #ca6cca;
 }
 .no-gutter > [class*='col-'] {
   padding-right: 0;
