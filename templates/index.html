@@ -53,7 +53,7 @@
                 </button>
 				<a class="navbar-brand page-scroll "
 					href="#page-top">
-					<img src="../static/img/logo2.png"></a>
+					<img src="../static/img/logo.png"><i>40th Anniversary</i></a>
 				<br>
             </div>
 
@@ -99,21 +99,9 @@
     </nav>
 
 
-    <!--
-    <header > 
-        <div class="header-content">
-            <div class="header-content-inner">
-                <h1 id="homeHeadin<BS>">Happy Birthday, Tsing Hua!</h1>
-                <hr>
-                <p>天行健，君子以自強不息。地勢坤，君子以厚德載物</p>
-                <a href="#about" class="btn btn-primary btn-xl page-scroll">Find Out More</a>
-            </div>
-        </div>
-   </header>
-   -->
 
    
-    <header id="myCarousel" class="carousel slide">
+    <header id="myCarousel" class="carousel slide container">
         <!-- Indicators -->
         <ol class="carousel-indicators">
             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -151,90 +139,56 @@
         </a>
 
     </header>
-
-    <section class="bg-primary" id="about">
-        <div class="container">
+    <div class="container bg-primary">
+    <section class="bg-primary " id="about">
         <!-- Marketing Icons Section -->
         <div class="row">
             <div class="col-lg-12">
                 <h1 class="page-header">
                 </h1>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-3">
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h4><i class="fa fa-fw fa-check"></i>最新消息 </h4>
                     </div>
                     <div class="panel-body">
                         <ul class="list-group NewsList">
-                            <li class="list-group-item">歡慶X教授獲得教育部傑出教育獎</li>
-                            <li class="list-group-item">賀! 清大資工勇奪國際期刊獎</li>
-                            <li class="list-group-item">光陰的故事，清大資工時光電影院</li>
+                            <li class="list-group-item">系友餐會開放報名中！</li>
+                            <li class="list-group-item">貴賓致詞名單出爐！</li>
                             <li class="list-group-item">[相片蒐集]歡迎提供相片至以下相簿...</li>
+                            <li class="list-group-item">賀！清大資工通過工程認証！</li>
                         </ul>
 						<a href="{{url_for('news')}}" class="btn btn-default">Learn More</a>
                     </div>
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-9">
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h4><i class="fa fa-fw fa-gift"></i> 系列活動</h4>
                     </div>
                     <div class="panel-body ">
-                        <table class="table" >
-                            <tbody class="NewsTable">
-                                <tr>
-                                <th scope="row">1</th>
-                                <td class="text-muted">校務處</td>
-                                <td>頒獎典禮</td>
-                                <td>2017/4/5</td>
-                                </tr>
-                                <tr>
-                                <th scope="row">2</th>
-                                <td class="text-muted">校務處</td>
-                                <td>頒獎典禮</td>
-                                <td>2017/4/5</td>
-                                </tr>
-                                <tr>
-                                <th scope="row">3</th>
-                                <td class="text-muted">校務處</td>
-                                <td>頒獎典禮</td>
-                                <td>2017/4/5</td>
-                                </tr>
+                        <table class="table table-striped table-hover" >
+                            <tbody class="NewsTable" id="scheduleBody_index">
                             </tbody>
                         </table>
 						<a href="{{url_for('activity')}}" class="btn btn-default">Learn More</a>
                     </div>
                 </div>
             </div>
-            <!--div class="col-md-4">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h4><i class="fa fa-fw fa-compass"></i>榮譽榜</h4>
-                    </div>
-                    <div class="panel-body">
-                        <a href="#" class="btn btn-default">Learn More</a>
-                    </div>
-                </div>
-            </div-->
         </div>
         <!-- /.row -->
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 text-center">
-                </div>
-            </div>
-        </div>
     </section>
 
-    <section id="services">
+    <section id="services" style="background-color:white; border:1px solid white; border-radius: 25px;">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <br >
                     <br >
                     <br >
-                    <h2 class="section-heading">歡慶40</h2>
+                    <h2 class="section-heading text-primary">歡慶40</h2>
                     <hr class="primary">
                 </div>
             </div>
@@ -242,44 +196,43 @@
                 <div class="col-lg-3 col-md-6 text-center">
                     <div class="service-box">
                         <i class="fa fa-4x fa-diamond text-primary sr-icons"></i>
-                        <h3>榮譽榜</h3>
-                        <p class="text-muted">Our templates are updated regularly so they don't break.</p>
+                        <h3 class="text-primary">榮譽榜</h3>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 text-center">
                     <div class="service-box">
                         <i class="fa fa-4x fa-paper-plane text-primary sr-icons"></i>
-                        <h3>快速導覽</h3>
-                        <p class="text-muted">You can use this theme as is, or you can make changes!</p>
+                        <h3 class="text-primary">快速導覽</h3>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 text-center">
                     <div class="service-box">
                         <i class="fa fa-4x fa-newspaper-o text-primary sr-icons"></i>
-                        <h3>最新動態</h3>
-                        <p class="text-muted">We update dependencies to keep things fresh.</p>
+                        <h3 class="text-primary">最新動態</h3>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 text-center">
                     <div class="service-box">
                         <i class="fa fa-4x fa-heart text-primary sr-icons"></i>
-                        <h3>交流天地</h3>
-                        <p class="text-muted">You have to make your websites with love these days!</p>
+                        <h3 class="text-primary">交流天地</h3>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
-    <section class="no-padding" id="portfolio">
-		<aside class="bg-dark">
+    <br>
+    <br>
+    <br>
+    <section class="no-padding" id="portfolio" style="background-color:black; border:1px solid blacke; border-radius: 25px;">
 			<div class="container text-center">
 				<div class="call-to-action">
+                    <br>
+                    <br>
 					<h2 class="text-faded">那些年...我們的回憶</h2>
 					
+                    <br>
 				</div>
 			</div>
-		</aside>
         <div class="container-fluid">
             <div class="row no-gutter popup-gallery">
                 <div class="col-lg-4 col-sm-6">
@@ -374,16 +327,19 @@
                 </div>
             </div>
         </div>
-    </section>
-
-    <aside class="bg-dark">
         <div class="container text-center">
             <div class="call-to-action">
+                <br>
 				<a href="{{url_for('album')}}" class="btn btn-default btn-xl sr-button">More</a>
                 
+                <br>
+                <br>
             </div>
         </div>
-    </aside>
+    </section>
+
+    <!--aside class="bg-dark">
+    </aside-->
 
     <section id="contact">
         <div class="container">
@@ -394,15 +350,15 @@
                 </div>
                 <div class="col-lg-4  text-center">
                     <i class="fa fa-map fa-3x sr-contact"></i>
-                    <p>123-456-6789</p>
+                    <p>清大台達館</p>
                 </div>
                 <div class="col-lg-4  text-center">
                     <i class="fa fa-phone fa-3x sr-contact"></i>
-                    <p>123-456-6789</p>
+                    <p>03-5714787</p>
                 </div>
                 <div class="col-lg-4 text-center">
                     <i class="fa fa-envelope fa-3x sr-contact"></i>
-                    <p><a href="mailto:your-email@your-domain.com">feedback@startbootstrap.com</a></p>
+                    <p><a href="mailto:your-email@your-domain.com">nthucs@nthu.edu.tw</a></p>
                 </div>
                 <div class="col-lg-10 col-lg-offset-1 text-center">
 					<div id="map"  class="col-lg-12" style="height:500px">123</div>
@@ -410,7 +366,7 @@
             </div>
         </div>
     </section>
-
+    </div>
     <!-- jQuery -->
     <script src="../static/vendor/jquery/jquery.min.js"></script>
 
@@ -424,6 +380,7 @@
 
     <!-- Theme JavaScript -->
     <script src="../static/js/creative.min.js"></script>
+    <script src="../static/js/activity.js"></script>
 
     <script async defer
       src="https://maps.googleapis.com/maps/api/js?callback=initMap">

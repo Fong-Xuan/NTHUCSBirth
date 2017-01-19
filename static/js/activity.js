@@ -52,14 +52,32 @@ scheduleRows.push(new  ScheduleRow("15:00~16:00", "魔術氣球秀", des, "台�
 var s = scheduleRows[0];
 
 var scheduleBody = document.getElementById("scheduleBody");
-for(var i in scheduleRows){
-    var tr = document.createElement("tr");
-    tr.innerHTML = "\
-        <th scope='row'>"+scheduleRows[i].time+"</th>\n\
-        <td>"+scheduleRows[i].title+"</td>\n\
-        <td>"+scheduleRows[i].description+"</td>\n\
-        <td>"+scheduleRows[i].location+"</td>\n\
-        <td>"+scheduleRows[i].link+"</td>\n\
-    "
-   scheduleBody.appendChild(tr);
+if(scheduleBody){
+
+    for(var i in scheduleRows){
+        var tr = document.createElement("tr");
+        tr.innerHTML = "\
+            <th scope='row'>"+scheduleRows[i].time+"</th>\n\
+            <td>"+scheduleRows[i].title+"</td>\n\
+            <td>"+scheduleRows[i].description+"</td>\n\
+            <td>"+scheduleRows[i].location+"</td>\n\
+            <td>"+scheduleRows[i].link+"</td>\n\
+        "
+    scheduleBody.appendChild(tr);
+    }
+}
+else {
+
+    var scheduleBody = document.getElementById("scheduleBody_index");
+    for(var i=0; i<5; i++){
+        var tr = document.createElement("tr");
+        tr.innerHTML = "\
+            <th scope='row'>"+scheduleRows[i].time+"</th>\n\
+            <td>"+scheduleRows[i].title+"</td>\n\
+            <td>"+scheduleRows[i].description+"</td>\n\
+            <td>"+scheduleRows[i].location+"</td>\n\
+            <td>"+scheduleRows[i].link+"</td>\n\
+        "
+    scheduleBody.appendChild(tr);
+    }
 }
