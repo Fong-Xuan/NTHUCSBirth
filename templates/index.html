@@ -51,34 +51,34 @@
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
                 </button>
-				<a class="navbar-brand page-scroll "
-					href="#page-top">
-					<img src="../static/img/logo.png"><i>40th Anniversary</i></a>
+				<a class="navbar-brand page-scroll col-md-3 col-xs-2 col-sm-2 col-lg-3" href="#page-top">
+					<img class="img-responsive"  src="../static/img/schoolLogo_white.png">
+                </a>
+				<a class="navbar-brand page-scroll col-md-6 col-xs-4 col-sm-4 col-lg-6" style="padding: 10px 14px" href="#page-top">
+					<img class="row img-responsive"  src="../static/img/wordsLogo.png">
+                </a>
 				<br>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse purplekBg" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a class="page-scroll fa fa-3x fa-facebook text-muted sr-icons"></a>
+                <br>
+                <br>
+                <ul class="row nav navbar-nav navbar-right">
+                    <li >
+                        <a class="page-scroll fa fa-2x fa-facebook text-muted sr-icons"></a>
                     </li>
-                    <li>
-                        <a class="page-scroll fa fa-3x fa-envelope text-muted sr-icons"></a>
+                    <li >
+                        <a class="page-scroll fa fa-2x fa-envelope text-muted sr-icons"></a>
                     </li> 
-                    <li>
-                        <a class="page-scroll fa fa-3x fa-map-marker text-muted sr-icons"></a>
+                    <li >
+                        <a class="page-scroll fa fa-2x fa-map-marker text-muted sr-icons"></a>
                     </li>
-                    <li>
-                        <a class="page-scroll fa fa-3x fa-home text-muted sr-icons"></a>
+                    <li >
+                        <a class="page-scroll fa fa-2x fa-home text-muted sr-icons"></a>
                     </li>
                 </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse purplekBg" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
+                <ul class="row nav navbar-nav navbar navbar-right">
                     <li>
                         <a class="page-scroll" href="#about">活動消息</a>
                     </li>
@@ -147,7 +147,7 @@
                 <h1 class="page-header">
                 </h1>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-6">
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h4><i class="fa fa-fw fa-check"></i>最新消息 </h4>
@@ -163,7 +163,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-9">
+            <div class="col-md-6">
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h4><i class="fa fa-fw fa-gift"></i> 系列活動</h4>
@@ -193,28 +193,25 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-3 col-md-6 text-center">
+                <div class="col-lg-4 col-md-12 text-center">
                     <div class="service-box">
                         <i class="fa fa-4x fa-diamond text-primary sr-icons"></i>
                         <h3 class="text-primary">榮譽榜</h3>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 text-center">
+                <div class="col-lg-4 col-md-12 text-center">
                     <div class="service-box">
+                        <a href="{{url_for('honorDays')}}">
                         <i class="fa fa-4x fa-paper-plane text-primary sr-icons"></i>
-                        <h3 class="text-primary">快速導覽</h3>
+                        <h3 class="text-primary">歷史沿革</h3>
+                        </a>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 text-center">
+                <div class="col-lg-4 col-md-12 text-center">
                     <div class="service-box">
-                        <i class="fa fa-4x fa-newspaper-o text-primary sr-icons"></i>
-                        <h3 class="text-primary">最新動態</h3>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 text-center">
-                    <div class="service-box">
+                        <a href="{{url_for('voting')}}">
                         <i class="fa fa-4x fa-heart text-primary sr-icons"></i>
-                        <h3 class="text-primary">交流天地</h3>
+                        <h3 class="text-primary">人氣王</h3>
                     </div>
                 </div>
             </div>
@@ -235,7 +232,7 @@
 			</div>
         <div class="container-fluid">
             <div class="row no-gutter popup-gallery">
-                <div class="col-lg-4 col-sm-6">
+                <div class="col-lg-4 col-sm-6 blackBorder">
                     <a href="../static/img/photos/p1.jpg" class="portfolio-box">
                         <img src="../static/img/photos/p1.jpg" class="img-responsive photos" alt="">
                         <div class="portfolio-box-caption">
@@ -250,7 +247,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="col-lg-4 col-sm-6">
+                <div class="col-lg-4 col-sm-6 blackBorder">
                     <a href="../static/img/photos/p2.jpg" class="portfolio-box">
                         <img src="../static/img/photos/p2.jpg" class="img-responsive photos" alt="">
                         <div class="portfolio-box-caption">
@@ -265,7 +262,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="col-lg-4 col-sm-6">
+                <div class="col-lg-4 col-sm-6 blackBorder">
                     <a href="../static/img/photos/p3.jpg" class="portfolio-box">
                         <img src="../static/img/photos/p3.jpg" class="img-responsive photos" alt="">
                         <div class="portfolio-box-caption">
@@ -280,7 +277,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="col-lg-4 col-sm-6">
+                <div class="col-lg-4 col-sm-6 blackBorder">
                     <a href="../static/img/photos/p4.jpg" class="portfolio-box">
                         <img src="../static/img/photos/p4.jpg" class="img-responsive photos" alt="">
                         <div class="portfolio-box-caption">
@@ -295,7 +292,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="col-lg-4 col-sm-6">
+                <div class="col-lg-4 col-sm-6 blackBorder">
                     <a href="../static/img/photos/p5.jpg" class="portfolio-box">
                         <img src="../static/img/photos/p5.jpg" class="img-responsive photos" alt="">
                         <div class="portfolio-box-caption">
@@ -310,7 +307,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="col-lg-4 col-sm-6">
+                <div class="col-lg-4 col-sm-6 blackBorder">
                     <a href="../static/img/photos/p6.jpg" class="portfolio-box">
                         <img src="../static/img/photos/p6.jpg" class="img-responsive photos" alt="">
                         <div class="portfolio-box-caption">
@@ -383,7 +380,7 @@
     <script src="../static/js/activity.js"></script>
 
     <script async defer
-      src="https://maps.googleapis.com/maps/api/js?callback=initMap">
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAuBwhpirNbGCekUZsZ9f2m1cycXasj8oE&callback=initMap">
     </script>
 	
 	<script>

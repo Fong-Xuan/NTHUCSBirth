@@ -22,6 +22,10 @@ def album():
 def voting():
     return render_template('voting.html')
 
+@app.route("/honorDays")
+def honorDays():
+    return render_template('HonorDays.html')
+
 if __name__ == "__main__":
 	app.run(host="0.0.0.0", port=5000, debug=True)
 

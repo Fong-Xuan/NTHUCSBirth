@@ -71,8 +71,9 @@ else {
     var scheduleBody = document.getElementById("scheduleBody_index");
     for(var i=0; i<5; i++){
         var tr = document.createElement("tr");
+        console.log(i);
         tr.innerHTML = "\
-            <th scope='row'>"+scheduleRows[i].time+"</th>\n\
+            <td scope='row'>"+scheduleRows[i].time+"</td>\n\
             <td>"+scheduleRows[i].title+"</td>\n\
             <td>"+scheduleRows[i].description+"</td>\n\
             <td>"+scheduleRows[i].location+"</td>\n\

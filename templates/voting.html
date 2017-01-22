@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>4 Col Portfolio - Start Bootstrap Template</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="../static/css/4-col-portfolio.css" rel="stylesheet">
+    <script src="../static/js/voting.js"></script>
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Bootstrap Core CSS -->
+
+    <!-- Custom Fonts -->
+    <link href="../static/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Plugin CSS -->
+    <link href="../static/vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+
+    <!-- Theme CSS -->
+    <!--link href="../static/css/creative.min.css" rel="stylesheet"-->
+    <link href="../static/css/creative.css" rel="stylesheet">
+    <link href="../static/css/myCss.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top purplekBg">
+		
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                </button>
+				<a class="navbar-brand page-scroll col-md-3 col-xs-2 col-sm-2 col-lg-3" href="#page-top">
+					<img class="img-responsive"  src="../static/img/schoolLogo_white.png">
+                </a>
+				<a class="navbar-brand page-scroll col-md-6 col-xs-4 col-sm-4 col-lg-6" style="padding: 10px 14px" href="#page-top">
+					<img class="row img-responsive"  src="../static/img/wordsLogo.png">
+                </a>
+				<br>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse purplekBg" id="bs-example-navbar-collapse-1">
+                <br>
+                <br>
+                <ul class="row nav navbar-nav navbar-right">
+                    <li >
+                        <a class="page-scroll fa fa-2x fa-facebook text-muted sr-icons"></a>
+                    </li>
+                    <li >
+                        <a class="page-scroll fa fa-2x fa-envelope text-muted sr-icons"></a>
+                    </li> 
+                    <li >
+                        <a class="page-scroll fa fa-2x fa-map-marker text-muted sr-icons"></a>
+                    </li>
+                    <li >
+                        <a class="page-scroll fa fa-2x fa-home text-muted sr-icons"></a>
+                    </li>
+                </ul>
+                <ul class="row nav navbar-nav navbar navbar-right">
+                    <li>
+                        <a class="page-scroll" href="#about">活動消息</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#services">歡慶40</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#portfolio">相片集錦</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#contact">聯絡我們</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container" >
+        
+        <div id="accountContainer" class="row container-fluid col-md-2 col-lg-2">
+            <br>
+            <br>
+            <br>
+            <div class="list-group" style="position:fixed">
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <div class="fb-login-button" data-max-rows="2" data-size="large" data-show-faces="false" data-auto-logout-link="false" onlogin="checkLoginState()"></div>
+                    </li>
+                    <li class="list-group-item">
+                        <img id="user_photo" src="../static/img/voting/emptyHead.jpg" class="img-responsive" style="width:120px"/>
+                    </li>
+                    <li class="list-group-item">
+                        <h4 id="user_name">Not Logged In</h4>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- /#accountContainer -->
+        <div  class="row container-fluid col-md-offset-1 col-md-9 col-lg-offset-1 col-lg-9">
+            <!-- Page Heading -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">人氣王競賽
+                        <small>登入後比賽看誰讚數更多！</small>
+
+                    </h1>
+                </div>
+            </div>
+
+            <!-- /.row -->
+            <div >
+                <!-- Projects Row -->
+                <div class="row  popup-gallery"  id="imagesContainer">
+                </div>
+                <!-- /.row -->
+            </div>
+            <!-- /.row -->
+
+            <hr>
+
+            <!-- Pagination -->
+            <div class="row text-center">
+                <div class="col-lg-12">
+                    <ul class="pagination">
+                        <li>
+                            <a href="#">&laquo;</a>
+                        </li>
+                        <li class="active">
+                            <a href="#">1</a>
+                        </li>
+                        <li>
+                            <a href="#">2</a>
+                        </li>
+                        <li>
+                            <a href="#">3</a>
+                        </li>
+                        <li>
+                            <a href="#">4</a>
+                        </li>
+                        <li>
+                            <a href="#">5</a>
+                        </li>
+                        <li>
+                            <a href="#">&raquo;</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.imagesContainer -->
+        <hr>
+
+        <!-- Footer -->
+
+    </div>
+    <!-- /.container -->
+    <!-- jQuery -->
+    <script src="../static/vendor/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../static/vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="../static/vendor/scrollreveal/scrollreveal.min.js"></script>
+    <script src="../static/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+    <!-- Theme JavaScript -->
+    <script src="../static/js/creative.min.js"></script>
+
+</body>
+
+</html>

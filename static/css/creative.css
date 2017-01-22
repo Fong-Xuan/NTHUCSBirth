@@ -91,7 +91,7 @@ aside {
 .navbar-default .nav > li > a:focus {
   text-transform: uppercase;
   font-weight: 700;
-  font-size: 20px;
+  font-size: 25px;
   color: #222222;
 }
 .navbar-default .nav > li > a:hover,

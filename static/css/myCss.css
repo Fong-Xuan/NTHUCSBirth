@@ -46,8 +46,9 @@ ul.NewsList li{
 
 
 .photos {
-    width: 650px;
-    height: 350px;
+    width: 600px;
+    height: 280px;
+    margin: 0px auto;
 }
 
 
@@ -59,4 +60,9 @@ ul.NewsList li{
 
 .center-container{
     text-align: center;
+}
+
+
+.blackBorder{
+    border: 2px  solid black;
 }

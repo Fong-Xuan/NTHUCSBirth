@@ -16,6 +16,7 @@
 
     <!-- Custom CSS -->
     <link href="../static/css/4-col-portfolio.css" rel="stylesheet">
+    <script src="../static/js/album.js"></script>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -72,9 +73,8 @@
             </div>
         </div>
         <!-- /.row -->
-
-        <!-- Projects Row -->
-        <div class="row">
+        <div id="photoContainer">
+        <!--div class="row">
             <div class="col-md-3 portfolio-item">
                 <a href="#">
                     <img class="img-responsive" src="http://placehold.it/750x450" alt="">
@@ -96,57 +96,10 @@
                 </a>
             </div>
         </div>
-        <!-- /.row -->
+        </div-->
 
         <!-- Projects Row -->
-        <div class="row">
-            <div class="col-md-3 portfolio-item">
-                <a href="#">
-                    <img class="img-responsive" src="http://placehold.it/750x450" alt="">
-                </a>
-            </div>
-            <div class="col-md-3 portfolio-item">
-                <a href="#">
-                    <img class="img-responsive" src="http://placehold.it/750x450" alt="">
-                </a>
-            </div>
-            <div class="col-md-3 portfolio-item">
-                <a href="#">
-                    <img class="img-responsive" src="http://placehold.it/750x450" alt="">
-                </a>
-            </div>
-            <div class="col-md-3 portfolio-item">
-                <a href="#">
-                    <img class="img-responsive" src="http://placehold.it/750x450" alt="">
-                </a>
-            </div>
-        </div>
-        <!-- /.row -->
 
-        <!-- Projects Row -->
-        <div class="row">
-            <div class="col-md-3 portfolio-item">
-                <a href="#">
-                    <img class="img-responsive" src="http://placehold.it/750x450" alt="">
-                </a>
-            </div>
-            <div class="col-md-3 portfolio-item">
-                <a href="#">
-                    <img class="img-responsive" src="http://placehold.it/750x450" alt="">
-                </a>
-            </div>
-            <div class="col-md-3 portfolio-item">
-                <a href="#">
-                    <img class="img-responsive" src="http://placehold.it/750x450" alt="">
-                </a>
-            </div>
-            <div class="col-md-3 portfolio-item">
-                <a href="#">
-                    <img class="img-responsive" src="http://placehold.it/750x450" alt="">
-                </a>
-            </div>
-        </div>
-        <!-- /.row -->
 
         <hr>
 
@@ -180,6 +133,7 @@
         </div>
         <!-- /.row -->
 
+	<ul id="imageList"></ul>
         <hr>
 
         <!-- Footer -->
@@ -201,6 +155,8 @@
     <!-- Bootstrap Core JavaScript -->
     <script src="../static/vendor/bootstrap/js/bootstrap.min.js"></script>
 
+
+    <script src="https://apis.google.com/js/client.js?onload=checkAuth"></script>
 </body>
 
 </html>
