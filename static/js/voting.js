@@ -38,11 +38,11 @@ function testAPI(response) {
         document.getElementById('user_name').innerHTML = user_name;
     });
 
-    FB.api('/' + uid + '/picture', function(response) {
+    FB.api('/me/picture?width=120&height=120', function(response) {
         var img_url = response.data['url'];
         console.log(img_url);
         document.getElementById('user_photo').src = img_url;
-
+        
         user_name = document.getElementById('user_name').innerHTML;
         img_url = document.getElementById('user_photo').src;
     });
