@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
     <meta charset="utf-8">
@@ -29,62 +28,56 @@
 
 </head>
 
-<body>
-
+{% block body %}
     <!-- Navigation -->
+
     <nav id="mainNav" class="navbar navbar-default navbar-fixed-top purplekBg">
-        <div class="container-fluid">
+		
+        <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand page-scroll " href="#page-top">NTHU CS</a>
+				<a class="navbar-brand page-scroll col-md-3 col-xs-2 col-sm-2 col-lg-3" href="{{url_for('index')}}">
+					<img class="img-responsive"  src="../static/img/schoolLogo_white.png">
+                </a>
+				<a class="navbar-brand page-scroll col-md-6 col-xs-4 col-sm-4 col-lg-6" style="padding: 10px 14px" href="{{url_for('index')}}">
+					<img class="row img-responsive"  src="../static/img/wordsLogo.png">
+                </a>
+				<br>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse purplekBg" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a class="page-scroll fa fa-2x fa-facebook text-muted sr-icons"></a>
+                <br>
+                <br>
+                <ul class="row nav navbar-nav navbar-right">
+                    <li >
+                        <a class="page-scroll fa fa-2x fa-facebook text-muted sr-icons" href="https://www.facebook.com/CSnthu/?fref=ts" target="fb"></a>
                     </li>
-                    <li>
-                        <a class="page-scroll fa fa-2x fa-envelope text-muted sr-icons"></a>
+                    <li >
+                        <a class="page-scroll fa fa-2x fa-envelope text-muted sr-icons" href="mailto:alumni@cs.nthu.edu.tw" target="email"></a>
                     </li> 
-                    <li>
-                        <a class="page-scroll fa fa-2x fa-map-marker text-muted sr-icons"></a>
+                    <li >
+                        <a class="page-scroll fa fa-2x fa-map-marker text-muted sr-icons" href="#contact"></a>
                     </li>
-                    <li>
-                        <a class="page-scroll fa fa-2x fa-home text-muted sr-icons"></a>
+                    <li >
+                        <a class="page-scroll fa fa-2x fa-home text-muted sr-icons" href="{{url_for('index')}}"></a>
                     </li>
                 </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container-fluid -->
-        <div class="container-fluid">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
-                </button>
-                <a class="navbar-brand page-scroll " href="#page-top">40th Anniversary</a>
-            </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse purplekBg" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="active">
-                        <a class="page-scroll" href="#about">活動消息</a>
+                <ul class="row nav navbar-nav navbar navbar-right">
+                    <li>
+                        <a class="page-scroll" href="{{url_for('news')}}">活動消息</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#services">歡慶40</a>
+                        <a class="page-scroll" href="{{url_for('index')}}">歡慶40</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#portfolio">相片集錦</a>
+                        <a class="page-scroll" href="{{url_for('album')}}">相片集錦</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#contact">聯絡我們</a>
+                        <a class="page-scroll" href="{{url_for('index')}}">聯絡我們</a>
                     </li>
                 </ul>
             </div>
@@ -92,7 +85,6 @@
         </div>
         <!-- /.container-fluid -->
     </nav>
-
     <!-- Page Content -->
     <div class="container">
 
@@ -248,6 +240,5 @@
     <!-- Bootstrap Core JavaScript -->
     <script src="../static/vendor/bootstrap/js/bootstrap.min.js"></script>
 
-</body>
-
+{% endblock %}
 </html>

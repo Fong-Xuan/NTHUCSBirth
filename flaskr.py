@@ -5,31 +5,35 @@ app = Flask(__name__)
 @app.route("/")
 @app.route("/index")
 def index():
-    return render_template('index.html')
+    return render_template('index.html', title="清大資工40周年慶 - 首頁")
 
 @app.route("/activity")
 def activity():
-    return render_template('activity.html')
+    return render_template('activity.html', title="系列活動")
 
 @app.route("/news")
 def news():
-    return render_template('news.html')
+    return render_template('news.html', title="最新消息")
 
 @app.route("/album")
 def album():
-    return render_template('album.html')
+    return render_template('album.html', title="相簿")
 
 @app.route("/voting")
 def voting():
-    return render_template('voting.html')
+    return render_template('voting.html', title="人氣王競賽")
 
 @app.route("/honorDays")
 def honorDays():
-    return render_template('HonorDays.html')
+    return render_template('HonorDays.html', title="歷史沿革")
 
 @app.route("/drive")
 def drive():
-    return render_template('googleDriveApi.html')
+    return render_template('googleDriveApi.html', title="google測試")
+
+@app.route("/layout")
+def layout():
+    return render_template('layout.html', title="layout")
 
 if __name__ == "__main__":
 	app.run(host="0.0.0.0", port=8000, debug=True)

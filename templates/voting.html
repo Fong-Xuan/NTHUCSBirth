@@ -49,10 +49,10 @@
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
                 </button>
-				<a class="navbar-brand page-scroll col-md-3 col-xs-2 col-sm-2 col-lg-3" href="#page-top">
+				<a class="navbar-brand page-scroll col-md-3 col-xs-2 col-sm-2 col-lg-3" href="{{url_for('index')}}">
 					<img class="img-responsive"  src="../static/img/schoolLogo_white.png">
                 </a>
-				<a class="navbar-brand page-scroll col-md-6 col-xs-4 col-sm-4 col-lg-6" style="padding: 10px 14px" href="#page-top">
+				<a class="navbar-brand page-scroll col-md-6 col-xs-4 col-sm-4 col-lg-6" style="padding: 10px 14px" href="{{url_for('index')}}">
 					<img class="row img-responsive"  src="../static/img/wordsLogo.png">
                 </a>
 				<br>
@@ -64,30 +64,30 @@
                 <br>
                 <ul class="row nav navbar-nav navbar-right">
                     <li >
-                        <a class="page-scroll fa fa-2x fa-facebook text-muted sr-icons"></a>
+                        <a class="page-scroll fa fa-2x fa-facebook text-muted sr-icons" href="https://www.facebook.com/CSnthu/?fref=ts" target="fb"></a>
                     </li>
                     <li >
-                        <a class="page-scroll fa fa-2x fa-envelope text-muted sr-icons"></a>
+                        <a class="page-scroll fa fa-2x fa-envelope text-muted sr-icons" href="mailto:alumni@cs.nthu.edu.tw" target="email"></a>
                     </li> 
                     <li >
-                        <a class="page-scroll fa fa-2x fa-map-marker text-muted sr-icons"></a>
+                        <a class="page-scroll fa fa-2x fa-map-marker text-muted sr-icons" href="#contact"></a>
                     </li>
                     <li >
-                        <a class="page-scroll fa fa-2x fa-home text-muted sr-icons"></a>
+                        <a class="page-scroll fa fa-2x fa-home text-muted sr-icons" href="{{url_for('index')}}"></a>
                     </li>
                 </ul>
                 <ul class="row nav navbar-nav navbar navbar-right">
                     <li>
-                        <a class="page-scroll" href="#about">活動消息</a>
+                        <a class="page-scroll" href="{{url_for('news')}}">活動消息</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#services">歡慶40</a>
+                        <a class="page-scroll" href="{{url_for('index')}}">歡慶40</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#portfolio">相片集錦</a>
+                        <a class="page-scroll" href="{{url_for('album')}}">相片集錦</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#contact">聯絡我們</a>
+                        <a class="page-scroll" href="{{url_for('index')}}">聯絡我們</a>
                     </li>
                 </ul>
             </div>

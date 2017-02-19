@@ -31,60 +31,54 @@
 
 <body>
 
-    <!-- Navigation -->
-    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top purplekBg">
-        <div class="container-fluid">
-            <!-- Brand and toggle get grouped for better mobile display -->
+    <!-- navigation -->
+    <nav id="mainnav" class="navbar navbar-default navbar-fixed-top purplekbg">
+		
+        <div class="container">
+            <!-- brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                    <span class="sr-only">toggle navigation</span> menu <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand page-scroll " href="#page-top">NTHU CS</a>
+				<a class="navbar-brand page-scroll col-md-3 col-xs-2 col-sm-2 col-lg-3" href="{{url_for('index')}}">
+					<img class="img-responsive"  src="../static/img/schoollogo_white.png">
+                </a>
+				<a class="navbar-brand page-scroll col-md-6 col-xs-4 col-sm-4 col-lg-6" style="padding: 10px 14px" href="{{url_for('index')}}">
+					<img class="row img-responsive"  src="../static/img/wordslogo.png">
+                </a>
+				<br>
             </div>
 
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse purplekBg" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a class="page-scroll fa fa-2x fa-facebook text-muted sr-icons"></a>
+            <!-- collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse purplekbg" id="bs-example-navbar-collapse-1">
+                <br>
+                <br>
+                <ul class="row nav navbar-nav navbar-right">
+                    <li >
+                        <a class="page-scroll fa fa-2x fa-facebook text-muted sr-icons" href="https://www.facebook.com/csnthu/?fref=ts" target="fb"></a>
                     </li>
-                    <li>
-                        <a class="page-scroll fa fa-2x fa-envelope text-muted sr-icons"></a>
+                    <li >
+                        <a class="page-scroll fa fa-2x fa-envelope text-muted sr-icons" href="mailto:alumni@cs.nthu.edu.tw" target="email"></a>
                     </li> 
-                    <li>
-                        <a class="page-scroll fa fa-2x fa-map-marker text-muted sr-icons"></a>
+                    <li >
+                        <a class="page-scroll fa fa-2x fa-map-marker text-muted sr-icons" href="#contact"></a>
                     </li>
-                    <li>
-                        <a class="page-scroll fa fa-2x fa-home text-muted sr-icons"></a>
+                    <li >
+                        <a class="page-scroll fa fa-2x fa-home text-muted sr-icons" href="{{url_for('index')}}"></a>
                     </li>
                 </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container-fluid -->
-        <div class="container-fluid">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
-                </button>
-                <a class="navbar-brand page-scroll " href="#page-top">40th Anniversary</a>
-            </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse purplekBg" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="active">
-                        <a class="page-scroll" href="#about">活動消息</a>
+                <ul class="row nav navbar-nav navbar navbar-right">
+                    <li>
+                        <a class="page-scroll" href="{{url_for('news')}}">活動消息</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#services">歡慶40</a>
+                        <a class="page-scroll" href="{{url_for('index')}}">歡慶40</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#portfolio">相片集錦</a>
+                        <a class="page-scroll" href="{{url_for('album')}}">相片集錦</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#contact">聯絡我們</a>
+                        <a class="page-scroll" href="{{url_for('index')}}">聯絡我們</a>
                     </li>
                 </ul>
             </div>
@@ -155,43 +149,7 @@
                 <!-- Posted Comments -->
 
                 <!-- Comment -->
-                <div class="media">
-                    <a class="pull-left" href="#">
-                        <img class="media-object" src="http://placehold.it/64x64" alt="">
-                    </a>
-                    <div class="media-body">
-                        <h4 class="media-heading">Start Bootstrap
-                            <small>August 25, 2014 at 9:30 PM</small>
-                        </h4>
-                        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-                    </div>
-                </div>
 
-                <!-- Comment -->
-                <div class="media">
-                    <a class="pull-left" href="#">
-                        <img class="media-object" src="http://placehold.it/64x64" alt="">
-                    </a>
-                    <div class="media-body">
-                        <h4 class="media-heading">Start Bootstrap
-                            <small>August 25, 2014 at 9:30 PM</small>
-                        </h4>
-                        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-                        <!-- Nested Comment -->
-                        <div class="media">
-                            <a class="pull-left" href="#">
-                                <img class="media-object" src="http://placehold.it/64x64" alt="">
-                            </a>
-                            <div class="media-body">
-                                <h4 class="media-heading">Nested Start Bootstrap
-                                    <small>August 25, 2014 at 9:30 PM</small>
-                                </h4>
-                                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-                            </div>
-                        </div>
-                        <!-- End Nested Comment -->
-                    </div>
-                </div>
             </div>
         </div>
         <!-- /.row -->

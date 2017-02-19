@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% block title %}<title>{{title}}</title>{% endblock %}
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- For RWS -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="../static/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+
+    <!-- Plugin CSS -->
+        <!--for pictures pop-up-->
+    <link href="../static/vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+
+    <!-- Theme CSS -->
+    <!--link href="../static/css/creative.min.css" rel="stylesheet"-->
+    <link href="../static/css/creative.css" rel="stylesheet">
+
+    <!-- My CSS-->
+    <link href="../static/css/myCss.css" rel="stylesheet">
+
+
+    <!-- jQuery -->
+    <script src="../static/vendor/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../static/vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script src="../static/vendor/scrollreveal/scrollreveal.min.js"></script>
+
+    <style>
+        .dropdown .dropdown-menu{
+            display: block;
+            opacity: 0;
+            -moz-transition:    all 1000ms ease-out;
+            -webkit-transition: all 1000ms ease-out;
+            -o-transition:      all 1000ms ease-out;
+            -ms-transition:     all 1000ms ease-out;
+            transition:         all 1000ms ease-out;
+        }
+        .dropdown:hover .dropdown-menu {
+            display: block;
+            opacity: 1;
+        }
+        .navbar-default .nav > li > a,
+            .navbar-default .nav > li > a:focus {
+            text-transform: uppercase;
+            font-weight: 700;
+            font-size: 25px;
+        }
+        .nav>li>.fa {
+            padding: 15px 10px;
+        }
+    </style>
+
+</head>
+
+
+<body>
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top purplekBg">
+		
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                </button>
+				<a class="navbar-brand page-scroll col-md-3 col-xs-2 col-sm-2 col-lg-3" href="{{url_for('index')}}">
+					<img class="img-responsive"  src="../static/img/schoolLogo_white.png">
+                </a>
+				<a class="navbar-brand page-scroll col-md-6 col-xs-4 col-sm-4 col-lg-6" style="padding: 10px 14px" href="{{url_for('index')}}">
+					<img class="row img-responsive"  src="../static/img/wordsLogo.png">
+                </a>
+				<br>
+            </div>
+
+            <!-- collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse purplekbg" id="bs-example-navbar-collapse-1">
+                <br>
+                <br>
+                <!-- links -->
+                <ul class="row nav navbar-nav navbar navbar-right">
+                    <!-- latest news and series activities -->
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        活動消息<b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{{url_for ('news')}}">最新消息</a></li>
+                            <li><a href="{{url_for ('activity')}}">系列活動</a></li>
+                        </ul>
+                    </li>
+                    <!-- celebration - other information -->
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        歡慶40<b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{{url_for ('honorDays')}}">歷史事紀</a></li>
+                            <li><a href="{{url_for ('index')}}">風雲人物</a></li>
+                            <li><a href="{{url_for ('index')}}">年度合照</a></li>
+                            <li><a href="{{url_for ('voting')}}">人氣競賽</a></li>
+                        </ul>
+                    </li>
+                    <!-- photos -->
+                    <li>
+                        <a class="page-scroll" href="{{url_for('album')}}">相片集錦</a>
+                    </li>
+                    <!-- contact us -->
+                    <li>
+                        <a class="page-scroll" href="{{url_for('index')}}">聯絡我們</a>
+                    </li>
+
+                <!-- icon links -->
+                    <!-- facebook activity page -->
+                    <li >
+                        <a class="fa">|</a> 
+                    </li>
+                    <li >
+                        <a class="page-scroll fa fa-facebook sr-icons " href="https://www.facebook.com/csnthu/?fref=ts" target="fb"></a>
+                    </li>
+                    <!-- email to --> 
+                    <li >
+                        <a class="page-scroll fa fa-envelope sr-icons" href="mailto:alumni@cs.nthu.edu.tw" target="email"></a>
+                    </li> 
+                    <!-- location info: google map-->
+                    <li >
+                        <a class="page-scroll fa fa-map-marker sr-icons" href="https://www.google.com.tw/maps/place/台達館/@24.7958441,120.9900555,17z/" target="location"></a>
+                    </li>
+                    <!--home -->
+                    <li >
+                        <a class="page-scroll fa fa-home sr-icons" href="{{url_for('index')}}"></a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+    <!-- child's content -->
+    {% block content %}{% endblock %}
+
+</body>
+</html>
