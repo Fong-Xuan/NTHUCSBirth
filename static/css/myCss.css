@@ -31,10 +31,6 @@
 
 }
 
-tbody.NewsTable {
-
-}
-
 tbody.NewsTable tr td{
     color: black;
 }
@@ -66,3 +62,4 @@ ul.NewsList li{
 .blackBorder{
     border: 2px  solid black;
 }
+

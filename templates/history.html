@@ -1,0 +1,126 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    {{super()}}
+{% endblock %}
+
+{% block script %}
+
+
+    <!-- Custom CSS -->
+    <link href="../static/css/scrolling-nav.css" rel="stylesheet">
+    
+
+    <!-- Scrolling Nav JavaScript -->
+    <script src="../static/vendor/bootstrap/js/jquery.easing.min.js"></script>
+    <script src="../static/vendor/bootstrap/js/scrolling-nav.js"></script>
+
+    <style>
+        nav#mainNav{
+            padding: 0px;
+        }
+
+        section#first_section{
+            background-image: url('../static/img/history/first.jpg');
+            background-size: 100% 95%; 
+            margin-top: 5%;
+            background-repeat: no-repeat;
+        }
+        h1#first_title{
+            background-color: rgba(255, 255, 255, 0.58);
+            border-radius: 8px;
+        }
+
+        .atBottom{
+            padding-top: 40%;
+        }
+
+    </style>
+
+    <script>
+        
+        var firstSection = document.getElementById('first_section');
+        var bgPicture = document.createElement('img');
+    </script>
+
+{% endblock %}
+
+{% block content %}
+<!--body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top"-->
+
+    <!-- Intro Section -->
+    <section id="first_section" class="page-section">
+        <div id="first_container" class="container">
+            <div  class="row">
+                <div  class="col-lg-12">
+                    <h1 id="first_title" class="col-lg-12" ><b>1977年 成立計算機管理決策所, 1997年 改名為資訊工程學系<b><h1>
+                </div>
+            </div>
+            <div  class="row atBottom">
+                <div  class="col-lg-12">
+                    <a id="first_aNext" class="btn btn-default page-scroll nextButton" href="#second">Click Me to Scroll Down!</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="second" class="page-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1>1998,1999 年， 在劉炯朗校長帶領下，清華學術聲望奪全台第1<h1>
+                    <a class="btn btn-default page-scroll" href="#third">Click Me to Scroll Down!</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="third" class="page-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1>第一屆~第四屆傑出系友<h1>
+                    <a class="btn btn-default page-scroll" href="#fourth">Click Me to Scroll Down!</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="fourth" class="page-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1>第五屆~第八屆傑出系友<h1>
+                    <a class="btn btn-default page-scroll" href="#fifth">Click Me to Scroll Down!</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="fifth" class="page-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1>第九屆~第十二屆傑出系友<h1>
+                    <a class="btn btn-default page-scroll" href="#sixth">Click Me to Scroll Down!</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="sixth" class="page-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1>2014-2016, QS 世界CS排名： 前進百大<h1>
+                    <a class="btn btn-default page-scroll" href="#seventh">Click Me to Scroll Down!</a>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

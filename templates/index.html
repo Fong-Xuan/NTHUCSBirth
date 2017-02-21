@@ -144,23 +144,23 @@
                 <h1 class="page-header">
                 </h1>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6 col-sm-6 col-xs-12">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h4><i class="fa fa-fw fa-check"></i>最新消息 </h4>
+                        <h4><i class="fa fa-fw fa-newspaper-o "></i>&nbsp;最新消息 </h4>
                     </div>
                     <div class="panel-body">
                         <ul class="list-group NewsList">
-                            <li class="list-group-item">系友餐會開放報名中！</li>
-                            <li class="list-group-item">貴賓致詞名單出爐！</li>
-                            <li class="list-group-item">[相片蒐集]歡迎提供相片至以下相簿...</li>
-                            <li class="list-group-item">賀！清大資工通過工程認証！</li>
+                            <li class="list-group-item">系慶交流活動與午宴開放<a href=''><b>報名</b></a>中！精彩演講與活動千萬不可錯過！</li>
+                            <li class="list-group-item">歡樂同學會！歡迎各系友 <a href='https://goo.gl/l3I1vD'><b>預約教室</b></a>大開Party小續當年資味><</li>
+                            <li class="list-group-item">歡唱卡拉OK放開<a href='https://goo.gl/LONQML'><b>報名</b></a>拉！點歌無限制，邀請您一起讓歌聲縈繞台達！</li>
+                            <li class="list-group-item">寶貝也同樂——系列親子活動：故事樂園與魔術氣球表演，開放<a href='https://goo.gl/dfOlCw'><b>報名</b></a>中。</li>
                         </ul>
 						<a href="{{url_for('news')}}" class="btn btn-default">Learn More</a>
                     </div>
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6 col-sm-6 col-xs-12">
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h4><i class="fa fa-fw fa-gift"></i> 系列活動</h4>
@@ -190,25 +190,34 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-4 col-md-12 text-center">
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 text-center">
                     <div class="service-box">
+                        <a href="{{url_for('celebrity')}}">
                         <i class="fa fa-4x fa-diamond text-primary sr-icons"></i>
-                        <h3 class="text-primary">榮譽榜</h3>
+                        <h3 class="text-primary">風雲人物</h3>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-12 text-center">
+                <div class="col-lg-3 col-md-3 col-sm-3  col-xs-6 text-center">
                     <div class="service-box">
-                        <a href="{{url_for('honorDays')}}">
+                        <a href="{{url_for('history')}}">
                         <i class="fa fa-4x fa-paper-plane text-primary sr-icons"></i>
-                        <h3 class="text-primary">歷史沿革</h3>
+                        <h3 class="text-primary">歷史事紀</h3>
                         </a>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-12 text-center">
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 text-center">
+                    <div class="service-box">
+                        <a href="{{url_for('history')}}">
+                        <i class="fa fa-4x fa-camera text-primary sr-icons"></i>
+                        <h3 class="text-primary">年度合照</h3>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 text-center">
                     <div class="service-box">
                         <a href="{{url_for('voting')}}">
                         <i class="fa fa-4x fa-heart text-primary sr-icons"></i>
-                        <h3 class="text-primary">人氣王</h3>
+                        <h3 class="text-primary">人氣競賽</h3>
                     </div>
                 </div>
             </div>
@@ -229,7 +238,7 @@
 			</div>
         <div class="container-fluid">
             <div class="row no-gutter popup-gallery">
-                <div class="col-lg-4 col-sm-6 blackBorder">
+                <div class="col-lg-4 col-sm-6 col-xs-0 blackBorder">
                     <a href="../static/img/photos/p1.jpg" class="portfolio-box">
                         <img src="../static/img/photos/p1.jpg" class="img-responsive photos" alt="">
                         <div class="portfolio-box-caption">
@@ -244,7 +253,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="col-lg-4 col-sm-6 blackBorder">
+                <div class="col-lg-4 col-sm-6 col-xs-0 blackBorder">
                     <a href="../static/img/photos/p2.jpg" class="portfolio-box">
                         <img src="../static/img/photos/p2.jpg" class="img-responsive photos" alt="">
                         <div class="portfolio-box-caption">
@@ -259,7 +268,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="col-lg-4 col-sm-6 blackBorder">
+                <div class="col-lg-4 col-sm-6 col-xs-0  blackBorder">
                     <a href="../static/img/photos/p3.jpg" class="portfolio-box">
                         <img src="../static/img/photos/p3.jpg" class="img-responsive photos" alt="">
                         <div class="portfolio-box-caption">
@@ -274,7 +283,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="col-lg-4 col-sm-6 blackBorder">
+                <div class="col-lg-4 col-sm-6 col-xs-0  blackBorder">
                     <a href="../static/img/photos/p4.jpg" class="portfolio-box">
                         <img src="../static/img/photos/p4.jpg" class="img-responsive photos" alt="">
                         <div class="portfolio-box-caption">
@@ -289,7 +298,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="col-lg-4 col-sm-6 blackBorder">
+                <div class="col-lg-4 col-sm-6 col-xs-0  blackBorder">
                     <a href="../static/img/photos/p5.jpg" class="portfolio-box">
                         <img src="../static/img/photos/p5.jpg" class="img-responsive photos" alt="">
                         <div class="portfolio-box-caption">
@@ -304,7 +313,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="col-lg-4 col-sm-6 blackBorder">
+                <div class="col-lg-4 col-sm-6 col-xs-0  blackBorder">
                     <a href="../static/img/photos/p6.jpg" class="portfolio-box">
                         <img src="../static/img/photos/p6.jpg" class="img-responsive photos" alt="">
                         <div class="portfolio-box-caption">
@@ -361,6 +370,16 @@
         </div>
     </section>
     <!--Bg div end-->
+    <hr>
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-4 col-lg-offset-4">
+                    <p>Owned By NTHU CS | 03-5714787 | nthucs@nthu.edu.tw</p>
+                </div>
+            </div>
+            <!-- /.row -->
+        </footer>
     </div>
 
     <!-- jQuery -->
@@ -375,7 +394,7 @@
     <script src="../static/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
 
     <!-- Theme JavaScript -->
-    <script src="../static/js/creative.min.js"></script>
+    <script src="../static/js/creative.js"></script>
     <script src="../static/js/activity.js"></script>
 
     <script async defer

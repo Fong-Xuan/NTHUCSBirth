@@ -1,98 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+{% extends "layout.html" %}
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+{% block title %}
+    {{super()}}
+{% endblock %}
 
-    <title>1 Col Portfolio - Start Bootstrap Template</title>
-
-    <!-- Bootstrap Core CSS -->
-    <link href="../static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../static/css/creative.css" rel="stylesheet">
-    <link href="../static/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="../static/css/myCss.css" rel="stylesheet">
-
-    <!-- Custom CSS -->
+{% block script %}
     <link href="../static/css/1-col-portfolio.css" rel="stylesheet">
+    <style>
+        h3 {font-weight:100;}
+    </style>
+{% endblock %}
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-</head>
-
-{% block body %}
-    <!-- Navigation -->
-
-    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top purplekBg">
-		
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
-                </button>
-				<a class="navbar-brand page-scroll col-md-3 col-xs-2 col-sm-2 col-lg-3" href="{{url_for('index')}}">
-					<img class="img-responsive"  src="../static/img/schoolLogo_white.png">
-                </a>
-				<a class="navbar-brand page-scroll col-md-6 col-xs-4 col-sm-4 col-lg-6" style="padding: 10px 14px" href="{{url_for('index')}}">
-					<img class="row img-responsive"  src="../static/img/wordsLogo.png">
-                </a>
-				<br>
-            </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse purplekBg" id="bs-example-navbar-collapse-1">
-                <br>
-                <br>
-                <ul class="row nav navbar-nav navbar-right">
-                    <li >
-                        <a class="page-scroll fa fa-2x fa-facebook text-muted sr-icons" href="https://www.facebook.com/CSnthu/?fref=ts" target="fb"></a>
-                    </li>
-                    <li >
-                        <a class="page-scroll fa fa-2x fa-envelope text-muted sr-icons" href="mailto:alumni@cs.nthu.edu.tw" target="email"></a>
-                    </li> 
-                    <li >
-                        <a class="page-scroll fa fa-2x fa-map-marker text-muted sr-icons" href="#contact"></a>
-                    </li>
-                    <li >
-                        <a class="page-scroll fa fa-2x fa-home text-muted sr-icons" href="{{url_for('index')}}"></a>
-                    </li>
-                </ul>
-                <ul class="row nav navbar-nav navbar navbar-right">
-                    <li>
-                        <a class="page-scroll" href="{{url_for('news')}}">活動消息</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="{{url_for('index')}}">歡慶40</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="{{url_for('album')}}">相片集錦</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="{{url_for('index')}}">聯絡我們</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container-fluid -->
-    </nav>
+{% block content %}
     <!-- Page Content -->
     <div class="container">
 
         <!-- Page Heading -->
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Page Heading
-                    <small>Secondary Text</small>
+                <h1 class="page-header">最新消息
+                    <small></small>
                 </h1>
             </div>
         </div>
@@ -100,15 +27,13 @@
 
         <!-- Project One -->
         <div class="row">
-            <div class="col-md-7">
+            <div class="col-md-6">
                 <a href="#">
-                    <img class="img-responsive" src="http://placehold.it/700x300" alt="">
+                    <img class="img-responsive" src="http://placehold.it/600x200" alt="">
                 </a>
             </div>
             <div class="col-md-5">
-                <h3>開始報名</h3>
-                <h4>Subheading</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quos perspiciatis atque eveniet unde.</p>
+                <h3>系慶交流活動與午宴開放《報名》中！精彩演講與活動千萬不可錯過！</h3>
                 <a class="btn btn-primary" href="#">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
             </div>
         </div>
@@ -118,15 +43,13 @@
 
         <!-- Project Two -->
         <div class="row">
-            <div class="col-md-7">
+            <div class="col-md-6">
                 <a href="#">
-                    <img class="img-responsive" src="http://placehold.it/700x300" alt="">
+                    <img class="img-responsive" src="http://placehold.it/600x200" alt="">
                 </a>
             </div>
             <div class="col-md-5">
-                <h3>Project Two</h3>
-                <h4>Subheading</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, odit velit cumque vero doloremque repellendus distinctio maiores rem expedita a nam vitae modi quidem similique ducimus! Velit, esse totam tempore.</p>
+                <h3>歡樂同學會！歡迎各系友《預約教室》大開Party小續當年資味><</h3>
                 <a class="btn btn-primary" href="#">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
             </div>
         </div>
@@ -136,15 +59,13 @@
 
         <!-- Project Three -->
         <div class="row">
-            <div class="col-md-7">
+            <div class="col-md-6">
                 <a href="#">
-                    <img class="img-responsive" src="http://placehold.it/700x300" alt="">
+                    <img class="img-responsive" src="http://placehold.it/600x200" alt="">
                 </a>
             </div>
             <div class="col-md-5">
-                <h3>Project Three</h3>
-                <h4>Subheading</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, temporibus, dolores, at, praesentium ut unde repudiandae voluptatum sit ab debitis suscipit fugiat natus velit excepturi amet commodi deleniti alias possimus!</p>
+                <h3>歡唱卡拉OK放開《報名》拉！點歌無限制，邀請您一起讓歌聲縈繞台達！</h3>
                 <a class="btn btn-primary" href="#">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
             </div>
         </div>
@@ -155,15 +76,13 @@
         <!-- Project Four -->
         <div class="row">
 
-            <div class="col-md-7">
+            <div class="col-md-6">
                 <a href="#">
-                    <img class="img-responsive" src="http://placehold.it/700x300" alt="">
+                    <img class="img-responsive" src="http://placehold.it/600x200" alt="">
                 </a>
             </div>
             <div class="col-md-5">
-                <h3>Project Four</h3>
-                <h4>Subheading</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, quidem, consectetur, officia rem officiis illum aliquam perspiciatis aspernatur quod modi hic nemo qui soluta aut eius fugit quam in suscipit?</p>
+                <h3>寶貝也同樂——系列親子活動：故事樂園與魔術氣球表演，開放《報名》中。</h3>
                 <a class="btn btn-primary" href="#">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
             </div>
         </div>
@@ -173,15 +92,28 @@
 
         <!-- Project Five -->
         <div class="row">
-            <div class="col-md-7">
+            <div class="col-md-6">
                 <a href="#">
-                    <img class="img-responsive" src="http://placehold.it/700x300" alt="">
+                    <img class="img-responsive" src="http://placehold.it/600x200" alt="">
                 </a>
             </div>
             <div class="col-md-5">
-                <h3>Project Five</h3>
-                <h4>Subheading</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, quo, minima, inventore voluptatum saepe quos nostrum provident ex quisquam hic odio repellendus atque porro distinctio quae id laboriosam facilis dolorum.</p>
+                <h3>誰是人氣王？邀請您一同華山論「讚」！　神祕好禮等你來拿 ^.<</h3>
+                <a class="btn btn-primary" href="#">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <hr>
+        <!-- Project Six -->
+        <div class="row">
+            <div class="col-md-6">
+                <a href="#">
+                    <img class="img-responsive" src="http://placehold.it/600x200" alt="">
+                </a>
+            </div>
+            <div class="col-md-5">
+                <h3>江山代有人才出！資工系＆資應所學生研究成果分享展。</h3>
                 <a class="btn btn-primary" href="#">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
             </div>
         </div>
@@ -189,47 +121,6 @@
 
         <hr>
 
-        <!-- Pagination -->
-        <div class="row text-center">
-            <div class="col-lg-12">
-                <ul class="pagination">
-                    <li>
-                        <a href="#">&laquo;</a>
-                    </li>
-                    <li class="active">
-                        <a href="#">1</a>
-                    </li>
-                    <li>
-                        <a href="#">2</a>
-                    </li>
-                    <li>
-                        <a href="#">3</a>
-                    </li>
-                    <li>
-                        <a href="#">4</a>
-                    </li>
-                    <li>
-                        <a href="#">5</a>
-                    </li>
-                    <li>
-                        <a href="#">&raquo;</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <!-- /.row -->
-
-        <hr>
-
-        <!-- Footer -->
-        <footer>
-            <div class="row">
-                <div class="col-lg-12">
-                    <p>Copyright &copy; Your Website 2014</p>
-                </div>
-            </div>
-            <!-- /.row -->
-        </footer>
 
     </div>
     <!-- /.container -->
@@ -241,4 +132,3 @@
     <script src="../static/vendor/bootstrap/js/bootstrap.min.js"></script>
 
 {% endblock %}
-</html>

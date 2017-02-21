@@ -7,6 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- For RWS -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- browser tab icon -->
+    <link rel="icon" href="../static/img/schoolLogo_white.png">
+
 
 
     <!-- Bootstrap Core CSS -->
@@ -25,9 +28,6 @@
     <!--link href="../static/css/creative.min.css" rel="stylesheet"-->
     <link href="../static/css/creative.css" rel="stylesheet">
 
-    <!-- My CSS-->
-    <link href="../static/css/myCss.css" rel="stylesheet">
-
 
     <!-- jQuery -->
     <script src="../static/vendor/jquery/jquery.min.js"></script>
@@ -43,11 +43,12 @@
         .dropdown .dropdown-menu{
             display: block;
             opacity: 0;
-            -moz-transition:    all 1000ms ease-out;
-            -webkit-transition: all 1000ms ease-out;
-            -o-transition:      all 1000ms ease-out;
-            -ms-transition:     all 1000ms ease-out;
-            transition:         all 1000ms ease-out;
+            text-align: center;
+            -moz-transition:    all 800ms ease-out;
+            -webkit-transition: all 800ms ease-out;
+            -o-transition:      all 800ms ease-out;
+            -ms-transition:     all 800ms ease-out;
+            transition:         all 800ms ease-out;
         }
         .dropdown:hover .dropdown-menu {
             display: block;
@@ -61,6 +62,9 @@
         }
         .nav>li>.fa {
             padding: 15px 10px;
+        }
+        .purplekBg{
+            background: purple;
         }
     </style>
 
@@ -107,7 +111,7 @@
                         歡慶40<b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a href="{{url_for ('honorDays')}}">歷史事紀</a></li>
+                            <li><a href="{{url_for ('history')}}">歷史事紀</a></li>
                             <li><a href="{{url_for ('index')}}">風雲人物</a></li>
                             <li><a href="{{url_for ('index')}}">年度合照</a></li>
                             <li><a href="{{url_for ('voting')}}">人氣競賽</a></li>
@@ -151,5 +155,31 @@
     <!-- child's content -->
     {% block content %}{% endblock %}
 
+    <hr>
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-4 col-lg-offset-4">
+                    <p>Copyright &copy; NTHUCS | 03-5714787 | nthucs@nthu.edu.tw</p>
+                </div>
+            </div>
+            <!-- /.row -->
+        </footer>
+
 </body>
+    {% block script%}{% endblock%}
+
+<script>
+(function($) {
+    // Offset for Main Navigation
+    $('#mainNav').affix({
+        offset: {
+            top: 100
+        }
+    })
+
+
+})(jQuery); // End of use strict
+
+</script>
 </html>

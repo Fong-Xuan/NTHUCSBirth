@@ -23,11 +23,22 @@ def album():
 def voting():
     return render_template('voting.html', title="人氣王競賽")
 
-@app.route("/honorDays")
-def honorDays():
-    return render_template('HonorDays.html', title="歷史沿革")
+@app.route("/history")
+def history():
+    return render_template('history.html', title="歷史沿革")
+
+@app.route("/celebrity")
+def celebrity():
+    return render_template('celebrity.html', title="風雲人物")
 
 @app.route("/drive")
+def drive():
+    return render_template('googleDriveApi.html', title="google測試")
+
+@app.route("/yearPhotos")
+def yearPhotos():
+    return render_template('yearPhotos.html', title='歷年系慶合照')
+
 def drive():
     return render_template('googleDriveApi.html', title="google測試")
 
