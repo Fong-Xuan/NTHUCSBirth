@@ -20,13 +20,13 @@
             padding: 0px;
         }
 
-        section#first_section{
+        section{
             background-image: url('../static/img/history/first.jpg');
-            background-size: 100% 95%; 
-            margin-top: 5%;
+            background-size: 100% 96%; 
+            margin-top: 4%;
             background-repeat: no-repeat;
         }
-        h1#first_title{
+        .title{
             background-color: rgba(255, 255, 255, 0.58);
             border-radius: 8px;
         }
@@ -38,9 +38,68 @@
     </style>
 
     <script>
+        function createSection(id, className, title, bgImgs, nextNodeId){
+            var section = document.createElement("section");
+            section.id = id;
+            section.className = className;
+           // section.setAttribute('backgroundImage', "../static/img/history/first.jpg");
+            console.log(section.style);
+
+            var container = document.createElement('div');
+            container.className = 'container';
+            section.appendChild(container);
+                var row1 = document.createElement('div');
+                row1.className = 'row';
+                container.appendChild(row1);
+                    var col12 = document.createElement('div');
+                    col12.className = 'col-lg-12';
+                    row1.appendChild(col12);
+                        var h1Title = document.createElement('h1');
+                        h1Title.className = 'title';
+                        h1Title.innerHTML += '<b>'+title+'</b>'
+                        col12.appendChild(h1Title);
+                        
+                
+                if(nextNodeId != null){
+                    var row2 = document.createElement('div');
+                    row2.className = 'row atBottom';
+                    container.appendChild(row2);
+                        var col12_2 = document.createElement('div');
+                        col12_2.className = 'col-lg-12';
+                        row2.appendChild(col12_2);
+                            var aNextSection = document.createElement('a');
+                            aNextSection.className = 'btn btn-default page-scroll nextButton';
+                            aNextSection.href = '#'+nextNodeId;
+                            aNextSection.innerHTML += '<b>'+'next'+'</b>'
+                            col12_2.appendChild(aNextSection);
+
+                }
+
+
+                 return section;   
+
+        }
         
         var firstSection = document.getElementById('first_section');
         var bgPicture = document.createElement('img');
+
+        var sectionCount = 6;
+
+        var bgImgs = ['','','','','','',''];
+        var titles = ['1977: 計算機管理決策研究所 , 1997: 改名為 資訊工程學系', '1989 李家同， 1994 陳文村 ', '1998,1999 年， 在劉炯朗校長帶領下，清華學術聲望奪全台第1', 
+                        '2005 微軟亞洲研究院與台灣清華大學再度簽署「人才交流備忘錄」', '2011, 台達館落成', '2014-2016: QS CS subject ranking: 前百大, '];
+        var sectionIds = ['first', 'second', 'third', 'fourth', 'fifth', 'sixth'];
+
+        for(var sectionId=0; sectionId<sectionCount; sectionId++){
+            var section_tmp = null;
+            if(sectionId == sectionCount-1)
+                var section_tmp = createSection(sectionIds[sectionId], 'page-section', titles[sectionId], bgImgs[sectionId], null);
+            else
+                var section_tmp = createSection(sectionIds[sectionId], 'page-section', titles[sectionId], bgImgs[sectionId], sectionIds[sectionId+1]);
+            var body = document.getElementsByTagName("BODY")[0];
+            body.appendChild(section_tmp);
+        }
+        
     </script>
 
 {% endblock %}
@@ -49,7 +108,7 @@
 <!--body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top"-->
 
     <!-- Intro Section -->
-    <section id="first_section" class="page-section">
+    <!--section id="first_section" class="page-section">
         <div id="first_container" class="container">
             <div  class="row">
                 <div  class="col-lg-12">
@@ -64,63 +123,15 @@
         </div>
     </section>
 
-    <!-- About Section -->
     <section id="second" class="page-section">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1>1998,1999 年， 在劉炯朗校長帶領下，清華學術聲望奪全台第1<h1>
+                    <h1><h1>
                     <a class="btn btn-default page-scroll" href="#third">Click Me to Scroll Down!</a>
                 </div>
             </div>
         </div>
-    </section>
+    </section-->
 
-    <!-- Services Section -->
-    <section id="third" class="page-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h1>第一屆~第四屆傑出系友<h1>
-                    <a class="btn btn-default page-scroll" href="#fourth">Click Me to Scroll Down!</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="fourth" class="page-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h1>第五屆~第八屆傑出系友<h1>
-                    <a class="btn btn-default page-scroll" href="#fifth">Click Me to Scroll Down!</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="fifth" class="page-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h1>第九屆~第十二屆傑出系友<h1>
-                    <a class="btn btn-default page-scroll" href="#sixth">Click Me to Scroll Down!</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="sixth" class="page-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h1>2014-2016, QS 世界CS排名： 前進百大<h1>
-                    <a class="btn btn-default page-scroll" href="#seventh">Click Me to Scroll Down!</a>
-                </div>
-            </div>
-        </div>
-    </section>
 {% endblock %}

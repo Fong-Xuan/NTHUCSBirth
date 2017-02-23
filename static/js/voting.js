@@ -1,6 +1,7 @@
 var pageId = "1172773622757917";
 
 
+
 window.fbAsyncInit = function() {
     FB.init({
         appId: '2138925566331857',
@@ -31,6 +32,12 @@ function testAPI(response) {
     var user_name = "xx";
     var img_url = "oo";
 
+    // Show the pagination and hide the loginButton
+    var pagination = document.getElementById('pagination');
+    pagination.className = "row text-center";
+    var loginButton_inner = document.getElementById('loginButton_inner');
+    loginButton_inner.className += ' displayNone';
+
     FB.api('/' + uid, function(response) {
         var user_name = response.name;
         var user_id = response.id;
@@ -52,6 +59,7 @@ function testAPI(response) {
         "/"+pageId+"/feed",
         function (response) {
             if (response && !response.error) {
+                
                 /* handle the result */
                 var imgContainer = document.getElementById('imagesContainer');
                 var row = document.createElement('div');
@@ -157,3 +165,4 @@ function checkLoginState() {
 
 
 }
+

@@ -38,6 +38,11 @@
     <!-- Plugin JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
     <script src="../static/vendor/scrollreveal/scrollreveal.min.js"></script>
+    
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
 
     <style>
         .dropdown .dropdown-menu{
@@ -113,7 +118,7 @@
                         <ul class="dropdown-menu">
                             <li><a href="{{url_for ('history')}}">歷史事紀</a></li>
                             <li><a href="{{url_for ('index')}}">風雲人物</a></li>
-                            <li><a href="{{url_for ('index')}}">年度合照</a></li>
+                            <li><a href="{{url_for ('yearPhotos')}}">年度合照</a></li>
                             <li><a href="{{url_for ('voting')}}">人氣競賽</a></li>
                         </ul>
                     </li>
