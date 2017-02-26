@@ -71,6 +71,10 @@
         .purplekBg{
             background: purple;
         }
+
+        h1#title{
+            font-weight: bold;
+        }
     </style>
 
 </head>
@@ -118,7 +122,7 @@
                         <ul class="dropdown-menu">
                             <li><a href="{{url_for ('history')}}">歷史事紀</a></li>
                             <li><a href="{{url_for ('index')}}">風雲人物</a></li>
-                            <li><a href="{{url_for ('yearPhotos')}}">年度合照</a></li>
+                            <li><a href="{{url_for ('index')}}">年度合照</a></li>
                             <li><a href="{{url_for ('voting')}}">人氣競賽</a></li>
                         </ul>
                     </li>
@@ -160,7 +164,7 @@
     <!-- child's content -->
     {% block content %}{% endblock %}
 
-    <hr>
+    <hr id="footerPoint">
         <!-- Footer -->
         <footer>
             <div class="row">

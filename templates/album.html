@@ -1,90 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "layout.html" %}
 
-<head>
+{% block title %}
+    {{super()}}
+{% endblock %}
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>4 Col Portfolio - Start Bootstrap Template</title>
-
-    <!-- Bootstrap Core CSS -->
-    <link href="../static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+{% block script %}
 
     <!-- Custom CSS -->
     <link href="../static/css/4-col-portfolio.css" rel="stylesheet">
     <script src="../static/js/album.js"></script>
+    <script src="https://apis.google.com/js/client.js?onload=checkAuth"></script>
+{% endblock %}
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-</head>
-
-<body>
-
-    <!-- Navigation -->
-    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top purplekBg">
-		
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
-                </button>
-				<a class="navbar-brand page-scroll col-md-3 col-xs-2 col-sm-2 col-lg-3" href="{{url_for('index')}}">
-					<img class="img-responsive"  src="../static/img/schoolLogo_white.png">
-                </a>
-				<a class="navbar-brand page-scroll col-md-6 col-xs-4 col-sm-4 col-lg-6" style="padding: 10px 14px" href="{{url_for('index')}}">
-					<img class="row img-responsive"  src="../static/img/wordsLogo.png">
-                </a>
-				<br>
-            </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse purplekBg" id="bs-example-navbar-collapse-1">
-                <br>
-                <br>
-                <ul class="row nav navbar-nav navbar-right">
-                    <li >
-                        <a class="page-scroll fa fa-2x fa-facebook text-muted sr-icons" href="https://www.facebook.com/CSnthu/?fref=ts" target="fb"></a>
-                    </li>
-                    <li >
-                        <a class="page-scroll fa fa-2x fa-envelope text-muted sr-icons" href="mailto:alumni@cs.nthu.edu.tw" target="email"></a>
-                    </li> 
-                    <li >
-                        <a class="page-scroll fa fa-2x fa-map-marker text-muted sr-icons" href="#contact"></a>
-                    </li>
-                    <li >
-                        <a class="page-scroll fa fa-2x fa-home text-muted sr-icons" href="{{url_for('index')}}"></a>
-                    </li>
-                </ul>
-                <ul class="row nav navbar-nav navbar navbar-right">
-                    <li>
-                        <a class="page-scroll" href="{{url_for('news')}}">活動消息</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="{{url_for('index')}}">歡慶40</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="{{url_for('album')}}">相片集錦</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="{{url_for('index')}}">聯絡我們</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container-fluid -->
-    </nav>
-
+{% block content %}
     <!-- Page Content -->
     <div class="container">
 
@@ -98,7 +26,7 @@
         </div>
         <!-- /.row -->
         <div id="photoContainer">
-        <!--div class="row">
+        <div class="row">
             <div class="col-md-3 portfolio-item">
                 <a href="#">
                     <img class="img-responsive" src="http://placehold.it/750x450" alt="">
@@ -120,7 +48,7 @@
                 </a>
             </div>
         </div>
-        </div-->
+        </div>
 
         <!-- Projects Row -->
 
@@ -160,27 +88,4 @@
 	<ul id="imageList"></ul>
         <hr>
 
-        <!-- Footer -->
-        <footer>
-            <div class="row">
-                <div class="col-lg-12">
-                    <p>Copyright &copy; Your Website 2014</p>
-                </div>
-            </div>
-            <!-- /.row -->
-        </footer>
-
-    </div>
-    <!-- /.container -->
-
-    <!-- jQuery -->
-    <script src="../static/vendor/jquery/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="../static/vendor/bootstrap/js/bootstrap.min.js"></script>
-
-
-    <script src="https://apis.google.com/js/client.js?onload=checkAuth"></script>
-</body>
-
-</html>
+{% endblock %}

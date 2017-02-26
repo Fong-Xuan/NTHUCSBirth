@@ -17,16 +17,27 @@
         .displayNone{
             display: none;
         }
+
+        #accountList{
+            position:fixed;
+        }
+
+        @media (max-width: 1073px) {
+            #accountList{
+                background-color: black;
+                position: relative;
+            }
+        }
     </style>
 
 {% endblock %}
 
 {% block content %}
-        <div id="accountContainer" class="row container-fluid col-md-2 col-lg-2">
+        <div id="accountContainer" class="row container-fluid col-md-1 col-md-offset-1 col-lg-1 col-lg-offset-1 col-sm-0 col-xs-0 ">
             <br>
             <br>
             <br>
-            <div class="list-group" style="position:fixed">
+            <div id="accountList" class="list-group" style="">
                 <ul class="list-group">
                     <li class="list-group-item">
                         <div class="fb-login-button" data-max-rows="2" data-size="large" data-show-faces="false" data-auto-logout-link="false" onlogin="checkLoginState()"></div>

@@ -60,17 +60,18 @@ t{% extends "layout.html" %}
             element_tmp.innerHTML = innerHTML;
             return element_tmp;
         }
-        var headers = ['第一屆到第三屆 (2001~2003)', '第四屆到第六屆 (2004~2006)', '第八屆到第十屆 (2008~2010)', '第十一屆到第十三屆 (2011~2013)', '第十四到第十六屆 (2014~2016)',]
+        var headers = ['第三屆到第一屆 (2003~2001)', '第六屆到第四屆 (2006~2004)', '第八屆到第十屆 (2010~2008)', '第十三屆到第十一屆 (2013-2011)', '第十六屆到第十四屆 (2016-2014)',]
         var celebrityWall = document.getElementById('celebrityWall');
 
         for(var rowIndex=4; rowIndex>=0; rowIndex--){
-            var div_heading = getElement('div', 'col-lg-12');
-                var div_title = getElementWithContent('div', 'page-header', headers[rowIndex]);
+            var div_heading = getElement('div', 'col-lg-12 col-md-12 col-sm-12 col-xs-12');
+                var div_title = getElementWithContent('h3', 'page-header', headers[rowIndex]);
             div_heading.appendChild(div_title);
             celebrityWall.appendChild(div_heading);
            
             var peopleCountForOneRow = 3;
-            for(var count=0; count<peopleCountForOneRow; count++){
+            // for(var count=0; count<peopleCountForOneRow; count++){
+            for(var count=peopleCountForOneRow-1; count>=0; count--){
                 var div_celebirtyList = getElement('div', 'col-lg-4 col-md-4 col-sm-4 col-xs-4 text-center');
                 var celebrity_tmp = Celebrities[rowIndex*3+count];
 
@@ -88,6 +89,12 @@ t{% extends "layout.html" %}
                 div_celebirtyList.appendChild(p_now);
                 celebrityWall.appendChild(div_celebirtyList);
             }
+            var br_tmp = getElement('br', '');
+            var br_tmp2 = getElement('br', '');
+            var br_tmp3 = getElement('br', '');
+            celebrityWall.appendChild(br_tmp);
+            celebrityWall.appendChild(br_tmp2);
+            celebrityWall.appendChild(br_tmp3);
 
         }
 
@@ -104,10 +111,10 @@ t{% extends "layout.html" %}
         <!-- Introduction Row -->
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">風雲人物 
+                <h1 class="page-header" id="title">風雲人物 
                     <small>傑出校友獎</small>
                 </h1>
-                <p>「所謂大學者，非謂有大樓之謂也，有大師之謂也!」</p> 
+                <p>「所謂大學者，非謂有大樓之謂也，有大師之謂也!」 ---- 梅貽琦</p> 
             </div>
 
         </div>
@@ -116,8 +123,9 @@ t{% extends "layout.html" %}
         <div class="row" id="celebrityWall">
             
         </div>
+        
 
-        <hr>
+
 
 
     </div>
