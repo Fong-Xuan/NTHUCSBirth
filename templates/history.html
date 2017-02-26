@@ -35,7 +35,7 @@
         }
 
         .atBottom{
-            padding-top: 40%;
+            padding-top: 50%;
         }
 
         .padding0 {
@@ -96,8 +96,8 @@
 
         var sectionCount = 6;
 
-        var bgImgs = ['','','','','','',''];
-        var titles = ['1977: 計算機管理決策研究所 , 1997: 改名為 資訊工程學系', '1989 李家同， 1994 陳文村 ', '1998,1999 年， 在劉炯朗校長帶領下，清華學術聲望奪全台第1', 
+        var bgImgs = ['first.jpg','second.jpg','third.jpg','fouth.jpg','fifth.jpg','sixth.jpg',''];
+        var titles = ['1977 成立計算機管理決策研究所 , 1997 改名為資訊工程學系', '1989 李家同，1994 陳文村, 2016 許健平 教授獲得教育部學術獎', '1998,1999 在劉炯朗校長帶領下，清華學術聲望奪全台第1', 
                         '2005 微軟亞洲研究院與台灣清華大學再度簽署「人才交流備忘錄」', '2011, 台達館落成', '2014-2016: QS CS subject ranking: 前百大, '];
         var sectionIds = ['first', 'second', 'third', 'fourth', 'fifth', 'sixth'];
 
@@ -110,7 +110,8 @@
             
             var beforePoint = document.getElementById('footerPoint')
 
-
+            var bgImgLoc = "../static/img/history/";
+            section_tmp.style.backgroundImage =  'url('+bgImgLoc + bgImgs[sectionId]+')';
             document.body.insertBefore(section_tmp, beforePoint);
 
 
@@ -143,7 +144,6 @@
 {% endblock %}
 
 {% block content %}
-<br>
 <br>
 <br>
 <br>

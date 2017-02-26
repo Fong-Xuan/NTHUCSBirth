@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    {% block title %}<title>{{title}}</title>{% endblock %}
+    {% block title %}<title>{{tabName}}</title>{% endblock %}
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- For RWS -->
@@ -75,12 +75,19 @@
         h1#title{
             font-weight: bold;
         }
+
+        div#titleContainer{
+            margin-top:7%;
+        }
+        body.lowPaddingTop{
+            padding-top: 20px;
+        }
     </style>
 
 </head>
 
 
-<body>
+<body class="lowPaddingTop">
     <nav id="mainNav" class="navbar navbar-default navbar-fixed-top purplekBg">
 		
         <div class="container">
@@ -121,8 +128,8 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li><a href="{{url_for ('history')}}">歷史事紀</a></li>
-                            <li><a href="{{url_for ('index')}}">風雲人物</a></li>
-                            <li><a href="{{url_for ('index')}}">年度合照</a></li>
+                            <li><a href="{{url_for ('celebrity')}}">風雲人物</a></li>
+                            <li><a href="{{url_for ('yearPhotos')}}">年度合照</a></li>
                             <li><a href="{{url_for ('voting')}}">人氣競賽</a></li>
                         </ul>
                     </li>
@@ -161,6 +168,23 @@
         </div>
         <!-- /.container-fluid -->
     </nav>
+    {% if title %}
+    <div id="titleContainer" class="container">
+        <!-- Introduction Row -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header" id="title">{{title}}
+                    <small>{{subtitle}}</small>
+                </h1>
+                {% if description %}
+                <p>「所謂大學者，非謂有大樓之謂也，有大師之謂也!」 ---- 梅貽琦</p> 
+                {% endif %}
+            </div>
+
+        </div>
+    </div>
+    {% endif %}
+
     <!-- child's content -->
     {% block content %}{% endblock %}
 
