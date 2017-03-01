@@ -1,5 +1,8 @@
 from flask import Flask
 from flask import render_template
+from collections import namedtuple
+from os import listdir
+from os.path import isfile
 app = Flask(__name__)
 
 @app.route("/")
@@ -15,17 +18,31 @@ def activity():
 def news():
     return render_template('news.html', tabName="最新消息", title="系列消息", subtitle="")
 
-@app.route("/album")
+@app.route("/album", methods=['GET', 'POST'])
 def album():
-    return render_template('album.html', tabName="相簿", title="光陰集錦",  subtitle="")
+    """ show the album page"""
+    Photo = namedtuple('Photo', ['name', 'src', 'index', 'page'])
+
+    listdir_location = './static/img/photos/'
+
+    photo_srcs = [(listdir_location + imgSrc) for imgSrc in listdir(listdir_location)]
+    # print(photoSrcs)
+
+    page_num = 1
+    page_photo_count = 40
+    photos = [Photo(photo_srcs[index].split('/')[-1], photo_srcs[index], index, page_num / page_photo_count + 1)
+              for index in range(len(photo_srcs))]
+    print(photos)
+
+    return render_template('album.html', tabName="相簿", title="光陰集錦", subtitle="", photos=photos)
 
 @app.route("/voting")
 def voting():
-    return render_template('voting.html', tabName="人氣王競賽", title="人氣王競賽",  subtitle="")
+    return render_template('voting.html', tabName="人氣王競賽", title="人氣王競賽", subtitle="")
 
 @app.route("/history")
 def history():
-    return render_template('history.html', tabName="歷史沿革", title="",  subtitle="")
+    return render_template('history.html', tabName="歷史沿革", title="", subtitle="")
 
 @app.route("/celebrity")
 def celebrity():
