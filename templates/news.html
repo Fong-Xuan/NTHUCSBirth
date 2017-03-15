@@ -7,117 +7,104 @@
 {% block script %}
     <link href="../static/css/1-col-portfolio.css" rel="stylesheet">
     <style>
-        h3 {font-weight:100;}
+        h3 a{font-weight: bold}
+        .blur{
+            opacity: 0.8;
+            filter: alpha(opacity=80); /* For IE8 and earlier */
+            -webkit-filter: blur(0.7px); /* Safari */
+            filter: blur(0.7px);
+        }
+
+        .blur:hover{
+            opacity: 1.0;
+            filter: alpha(opacity=100); /* For IE8 and earlier */
+            -webkit-filter: blur(0.0px); /* Safari */
+            filter: blur(0.0px);
+        }
+        .bg-orange{
+            background-color: rgba(255, 166, 0, 0.85);
+        }
+        .color-orange{
+            color: rgba(255, 166, 0, 0.85);
+        }
+        .color-purple{
+            color: purple;
+        }
     </style>
+
 {% endblock %}
 
 {% block content %}
     <!-- Page Content -->
-    <div class="container">
-        <!-- Project One -->
-        <div class="row">
-            <div class="col-md-6">
-                <a href="#">
-                    <img class="img-responsive" src="http://placehold.it/600x200" alt="">
-                </a>
-            </div>
-            <div class="col-md-5">
-                <h3>系慶交流活動與午宴開放《報名》中！精彩演講與活動千萬不可錯過！</h3>
-                <a class="btn btn-primary" href="#">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
-            </div>
-        </div>
-        <!-- /.row -->
+    <div id="ContentBody" class="container">
+        <script>
+            
+            function getOneNewsDiv(title, link, imgSrc){
+                var row_div = document.createElement('div');
+                row_div.className = 'row';
 
-        <hr>
+                var img_div = document.createElement('div');
+                img_div.className = 'col-md-5'
+                var img_link = document.createElement('a');
+                img_link.href = link;
+                var img_img = document.createElement('img');
+                img_img.className = 'img-responsive blur';
+                img_img.src = imgSrc;
+                img_img.alt = "http://placehold.it/600x200";
+                img_link.appendChild(img_img);
+                img_div.appendChild(img_link);
+                
+                
+                var words_div = document.createElement('div');
+                words_div.className = 'col-md-5';
+                var words_title = document.createElement('h3');
+                words_title.innerHTML = title;
+                var words_link = document.createElement('a');
+                words_link.className = 'btn bg-orange color-purple';
+                words_link.href = link;
+                words_link.target = "_blank";
+                words_link.innerHTML = "View More";
+                var words_link_span = document.createElement('span');
+                words_link_span.class = 'glyphicon glyphicon-chevron-right';
+                words_link.appendChild(words_link_span);
+                words_div.appendChild(words_title);
+                words_div.innerHTML+= "<br>";
+                words_div.appendChild(words_link);
+                
+                row_div.appendChild(img_div);
+                row_div.appendChild(words_div);
 
-        <!-- Project Two -->
-        <div class="row">
-            <div class="col-md-6">
-                <a href="#">
-                    <img class="img-responsive" src="http://placehold.it/600x200" alt="">
-                </a>
-            </div>
-            <div class="col-md-5">
-                <h3>歡樂同學會！歡迎各系友《預約教室》大開Party小續當年資味><</h3>
-                <a class="btn btn-primary" href="#">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
-            </div>
-        </div>
-        <!-- /.row -->
+                return row_div;
+            }
 
-        <hr>
+            var imgSrcs = ['1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg', '6.jpg'];
+            var links = ['https://goo.gl/Yqqp7e',
+                         'https://goo.gl/l3I1vD',
+                         'https://goo.gl/LONQML',
+                         'https://goo.gl/dfOlCw',
+                         "/voting",
+                         '#']
+            var titles = ["系慶交流活動～<br>精彩演講與活動開放<a class='color-orange' href='https://goo.gl/Yqqp7e' target='_b'><b>報名</b></a>中！(含午宴)", 
+                          "青春同學會！<br>歡迎各系友<a class='color-orange' href='https://goo.gl/l3I1vD' target='_b'>預約教室</a><br>大開Party小續當年資味！", 
+                          "歡唱卡拉OK開放<a class='color-orange' href='https://goo.gl/LONQML' target='_b'>報名</a>拉！<br>點歌無限制，邀請您一起讓歌聲縈繞台達！" ,
+                          "寶貝也同樂——系列親子活動：<br>故事樂園與魔術氣球表演，開放<a class='color-orange' href='https://goo.gl/dfOlCw' target='_b'>報名</a>中。", 
+                          "誰是人氣王？邀請您一同華山論「<a class='color-orange' href='/voting' target='_b'>讚</a>」！<br>神祕好禮等你來拿 ^.<", 
+                          "江山代有人才出！<br>資工系＆資應所學生<a class='color-orange' target='_b'>研究成果分享展。</a>"];
 
-        <!-- Project Three -->
-        <div class="row">
-            <div class="col-md-6">
-                <a href="#">
-                    <img class="img-responsive" src="http://placehold.it/600x200" alt="">
-                </a>
-            </div>
-            <div class="col-md-5">
-                <h3>歡唱卡拉OK放開《報名》拉！點歌無限制，邀請您一起讓歌聲縈繞台達！</h3>
-                <a class="btn btn-primary" href="#">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
-            </div>
-        </div>
-        <!-- /.row -->
-
-        <hr>
-
-        <!-- Project Four -->
-        <div class="row">
-
-            <div class="col-md-6">
-                <a href="#">
-                    <img class="img-responsive" src="http://placehold.it/600x200" alt="">
-                </a>
-            </div>
-            <div class="col-md-5">
-                <h3>寶貝也同樂——系列親子活動：故事樂園與魔術氣球表演，開放《報名》中。</h3>
-                <a class="btn btn-primary" href="#">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
-            </div>
-        </div>
-        <!-- /.row -->
-
-        <hr>
-
-        <!-- Project Five -->
-        <div class="row">
-            <div class="col-md-6">
-                <a href="#">
-                    <img class="img-responsive" src="http://placehold.it/600x200" alt="">
-                </a>
-            </div>
-            <div class="col-md-5">
-                <h3>誰是人氣王？邀請您一同華山論「讚」！　神祕好禮等你來拿 ^.<</h3>
-                <a class="btn btn-primary" href="#">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
-            </div>
-        </div>
-        <!-- /.row -->
-
-        <hr>
-        <!-- Project Six -->
-        <div class="row">
-            <div class="col-md-6">
-                <a href="#">
-                    <img class="img-responsive" src="http://placehold.it/600x200" alt="">
-                </a>
-            </div>
-            <div class="col-md-5">
-                <h3>江山代有人才出！資工系＆資應所學生研究成果分享展。</h3>
-                <a class="btn btn-primary" href="#">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
-            </div>
-        </div>
-        <!-- /.row -->
-
-        <hr>
+            
+            var contentBody  = document.getElementById('ContentBody');
+            var MAX_NUM_OF_NEWS = titles.length;
+            var imgSrc_location = '../static/img/news/'
+            for(var newsCount = 0; newsCount < MAX_NUM_OF_NEWS; newsCount++){
+               var row_div_tmp = getOneNewsDiv(titles[newsCount], links[newsCount], imgSrc_location+imgSrcs[newsCount]); 
+               contentBody.innerHTML+='<!-- News ' + (newsCount+1) +'-->'
+               contentBody.appendChild(row_div_tmp);
+               contentBody.innerHTML += "<br><br>";
+            }
 
 
+        </script>
     </div>
     <!-- /.container -->
-
-    <!-- jQuery -->
-    <script src="../static/vendor/jquery/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="../static/vendor/bootstrap/js/bootstrap.min.js"></script>
 
 {% endblock %}

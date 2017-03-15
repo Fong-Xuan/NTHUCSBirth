@@ -9,6 +9,35 @@
     <link href="../static/css/blog-post.css" rel="stylesheet">
     <style>
         #myModal_wider .modal-dialog  {width:50%;}
+        @media (max-width: 900px) {
+            #myModal_wider .modal-dialog {
+                width: 100%;
+            } 
+        }
+
+        .link-default{
+            color:purple;
+            background-color: rgba(255, 166, 0, 0.85);
+        }
+        .link-default:hover{
+            color:white;
+        }
+        .no-border{
+            border: 0px solid;
+        }
+        .align-center{
+            text-align: center;
+        }
+        th{
+            font-size: 24px;
+        }
+        td{
+            font-size: 18px;
+        }
+        p{
+            font-size: 18px;
+
+        }
     </style>
 {% endblock %}
 
@@ -23,15 +52,20 @@
 
                 <!-- Blog Post -->
                 <!-- Author -->
-                <p class="lead">2017/4/23(日）</p>
-                <p class="lead">台達館1樓及資工系各會議室</p>
+                <br>
+                <p class="lead fa fa-2x fa-calendar">&nbsp;&nbsp;2017/4/23(日)&nbsp;9:30~16:00&nbsp;</p>
+                <a href="http://www.google.com/calendar/event?action=TEMPLATE&text=['清華資工40週年系慶系列活動']&dates=[start-custom format='20170423\\THi00\\Z']/[end-custom format='20170423\\THi00\\Z']&details=[description]&location=[location]&trp=false&sprop=&sprop=name:" 
+                        class="fa fa-2x fa-plus-circle" target="_blank" rel="nofollow"></a>
+                <br>
+                <p class="lead  fa fa-2x fa-map-marker">&nbsp;&nbsp;台達館1樓、資工系各會議室</p>
+                <br>
+                <p class="lead  fa fa-2x fa-gift">&nbsp;&nbsp;系列活動</p>
 
-                <hr>
                 <!-- Table -->
-                <div class="panel panel-default">
-                    <div class="panel-heading">
+                <div class="panel panel-default no-border">
+                    <!--div class="panel-heading">
                         <h4><i class="fa fa-fw fa-gift"></i> 系列活動</h4>
-                    </div>
+                    </div-->
                     <div class="panel-body">
                         <table class="table table-striped table-hover" >
                             <thead>
@@ -48,12 +82,17 @@
                         </table>
                     </div>
                 </div>
+                <br>
+                <br>
+                <br>
                 <!-- Table end -->
+                <div class="row align-center">
+                    <!-- Trigger the modal with a button -->
+                    <button type="button" class="btn bg-orange link-default btn-lg" data-toggle="modal" data-target="#myModal_wider">
+                        <span class="fa fa-clock-o"></span>&nbsp; 完整時間表
+                    </button>
+                </div>
 
-                <!-- Trigger the modal with a button -->
-                <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal_wider">
-                    <span class="fa fa-clock-o"></span>&nbsp; 完整行程表
-                </button>
 
                 <!-- Modal -->
                 <div id="myModal_wider" class="modal fade" role="dialog">
@@ -73,10 +112,9 @@
                                     <thead>
                                         <tr>
                                         <th>時間</th>
-                                        <th>流程</th>
+                                        <th>活動</th>
                                         <th>說明</th>
                                         <th>地點</th>
-                                        <th>連結</th>
                                         </tr>
                                     </thead>
                                     <tbody class="NewsTable" id="scheduleBody">
@@ -85,10 +123,21 @@
                             </div>
                         </div>
                         <!-- Table end -->
+                        <p>
+                        ★  9：30～16：00 &nbsp;&nbsp;攝影師將於舞台前主視覺--四十週年紀念看板前幫各級系友拍團體照留念，<br>
+                        可立即上傳並分享至四十周年粉絲專頁活動網頁按讚！<br>
+                        設有自拍機可立即將照片列印留存唷！<br>
+                        拍照最多人數的系級以及按讚數最多的系級將可獲頒最佳人氣獎！<br>
+                        （以當天下午2點前之按讚數來評比）
+                        <br>
+                        ★  9：30～16：00 &nbsp;&nbsp;資工系＆資應所學生研究成果分享展（台達館1樓中庭）
+                        <br>
+                        ★ 14：00～16：00 &nbsp;&nbsp;歡樂同學會（資電館、台達館各會議室）
+                        </b>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-default" ><a href="../doc/schedule.docx" download>Download</a> </button>
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn link-default" ><a href="../doc/schedule.docx" download>Download</a> </button>
+                        <button type="button" class="btn link-default" data-dismiss="modal">Close</button>
                     </div>
                     </div>
 
@@ -96,29 +145,10 @@
                 </div>
 
 
-                <!-- Blog Comments -->
-
-                <!-- Comments Form -->
-                <div class="well">
-                    <h4>Leave a Comment:</h4>
-                    <form role="form">
-                        <div class="form-group">
-                            <textarea class="form-control" rows="3"></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                    </form>
-                </div>
-
-                <hr>
-
-                <!-- Posted Comments -->
-
-                <!-- Comment -->
 
             </div>
         </div>
         <!-- /.row -->
-        <hr>
 
     </div>
     <!-- /.container -->

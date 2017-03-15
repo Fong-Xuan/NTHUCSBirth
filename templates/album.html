@@ -33,66 +33,184 @@
 
         })(jQuery); // End of use strict
     </script>
+
+    <style>
+        .align-center{
+            text-align: center;
+        }
+
+        .top-line{
+            border-top:1px solid #eee;
+            border-top-width: 3px;
+            border-top-style: solid;
+            border-top-color: purple;
+        }
+        #album_title{
+            font-weight: bold;
+        }
+        .album_cover_active{
+            opacity: 1;
+        }
+        .album_cover{
+            opacity: 0.5;
+            -webkit-transform: opcatity 2s;
+        }
+        .album_cover:hover{
+            opacity: 1;
+        }
+        div.row a h4{
+            color:red;
+            font-weight: bold;
+        
+        }
+    </style>
 {% endblock %}
 
 {% block content %}
     <!-- Page Content -->
-    <div class="container popup-gallery">
+    <div class="container ">
+        <div class="row">
+            {% if album_id == 1 %}
+                <div class="album_cover_active col-md-2 col-sm-3 col-xs-4 portfolio-item align-center" style="margin-bottom: 0px;">
+            {% else %}
+                <div class="album_cover col-md-2 col-sm-3 col-xs-4 portfolio-item align-center" style="margin-bottom: 0px;">
+            {% endif %}
+                <a href="/album/1&1">
+                    <img class="img-responsive" src="../static/img/photos/album.png">
+                    <h4>30周年慶相簿</h4>
+                </a>
+            </div>
+            {% if album_id == 2 %}
+                <div class="album_cover_active col-md-2 col-sm-3 col-xs-4 portfolio-item align-center" style="margin-bottom: 0px;">
+            {% else %}
+                <div class="album_cover col-md-2 col-sm-3 col-xs-4 portfolio-item align-center" style="margin-bottom: 0px;">
+            {% endif %}
+                <a href="/album/2&1">
+                    <img class="img-responsive" src="../static/img/photos/album.png">
+                    <h4>各實驗室懷舊相簿</h4>
+                </a>
+            </div>
+            {% if album_id == 3 %}
+                <div class="album_cover_active col-md-2 col-sm-3 col-xs-4 portfolio-item align-center" style="margin-bottom: 0px;">
+            {% else %}
+                <div class="album_cover col-md-2 col-sm-3 col-xs-4 portfolio-item align-center" style="margin-bottom: 0px;">
+            {% endif %}
+                <a href="/album/3&1">
+                    <img class="img-responsive" src="../static/img/photos/album.png">
+                    <h4>歷年相片合集</h4>
+                </a>
+            </div>
+        </div>
 
+    </div>
+
+    
+    <div class="container popup-gallery ">
+        <h2 id="album_title" class="page-header">30周年慶相簿</h2>
         {% if photos %}
-
+            {% set counter = 0 %}
             {% for photo in photos %}
-                {% if photo.index % 4 == 0 %}
-                    <div class="row">
-                        <div class="col-md-3 portfolio-item">
-                            <a href="{{photo.src}}" class="">
-                                <img class="img-responsive" src="{{photo.src}}" alt="http://placehold.it/750x450">
-                            </a>
+                {% set counter = counter + 1 %}
+                {% if counter <= 40 %}
+                    {% if photo.index % 4 == 0 %}
+                        <div class="row">
+                            <div class="col-md-3 portfolio-item">
+                                <a href="{{photo.src}}" class="portfolio-box">
+                                    <img class="img-responsive" src="{{photo.src}}" alt="http://placehold.it/750x450">
+                                    <div class="portfolio-box-caption">
+                                        <div class="portfolio-box-caption-content">
+                                            <div class="fa fa-2x fa-eye">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                    {% elif photo.index % 4 == 3%}
+                            <div class="col-md-3 portfolio-item">
+                                <a href="{{photo.src}}" class="portfolio-box">
+                                    <img class="img-responsive" src="{{photo.src}}" alt="http://placehold.it/750x450">
+                                    <div class="portfolio-box-caption">
+                                        <div class="portfolio-box-caption-content">
+                                            <div class="fa fa-2x fa-eye">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
                         </div>
-                {% elif photo.index % 4 == 3%}
-                        <div class="col-md-3 portfolio-item">
-                            <a href="{{photo.src}}" class="">
-                                <img class="img-responsive" src="{{photo.src}}" alt="http://placehold.it/750x450">
-                            </a>
+                    {% elif counter == loop.length  %}
+                            <div class="col-md-3 portfolio-item">
+                                <a href="{{photo.src}}" class="portfolio-box">
+                                    <img class="img-responsive" src="{{photo.src}}" alt="http://placehold.it/750x450">
+                                    <div class="portfolio-box-caption">
+                                        <div class="portfolio-box-caption-content">
+                                            <div class="fa fa-2x fa-eye">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
                         </div>
-                    </div>
-                {% else %}
-                        <div class="col-md-3 portfolio-item">
-                            <a href="{{photo.src}}" class="">
-                                <img class="img-responsive" src="{{photo.src}}" alt="http://placehold.it/750x450">
-                            </a>
-                        </div>
-                {% endif %} 
+                    {% else %}
+                            <div class="col-md-3 portfolio-item">
+                                <a href="{{photo.src}}" class="portfolio-box">
+                                    <img class="img-responsive" src="{{photo.src}}" alt="http://placehold.it/750x450">
+                                    <div class="portfolio-box-caption">
+                                        <div class="portfolio-box-caption-content">
+                                            <div class="fa fa-2x fa-eye">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                    {% endif %} 
+                {% endif %}
             {% endfor %}
         
         {% endif %}
+    </div>
 
-
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
         <!-- Pagination -->
         <div class="row text-center">
             <div class="col-lg-12">
                 <ul class="pagination">
-                    <li>
-                        <a href="#">&laquo;</a>
-                    </li>
-                    <li class="active">
-                        <a href="#">1</a>
-                    </li>
-                    <li>
-                        <a href="#">2</a>
-                    </li>
-                    <li>
-                        <a href="#">3</a>
-                    </li>
-                    <li>
-                        <a href="#">4</a>
-                    </li>
-                    <li>
-                        <a href="#">5</a>
-                    </li>
-                    <li>
-                        <a href="#">&raquo;</a>
-                    </li>
+                    {% if page_id > 1 %}
+                        {% set page_next = page_id -1 %}
+                        <li>
+                            <a href="/album/{{album_id}}&{{page_next}}">&laquo;</a>
+                        </li>
+                    {% else %}
+                        <li>
+                            <a href="#">&laquo;</a>
+                        </li>
+                    {% endif %}
+                    {% for page_num in range(1, pages_count+1) %}
+                        {% if page_num == page_id %}
+                            <li class="active">
+                                <a href="#">{{page_num}}</a>
+                            </li>
+                        {% else %}
+                            <li class="">
+                                <a href="/album/{{album_id}}&{{page_num}}">{{page_num}}</a>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+                    {% if page_id < pages_count %}
+                        {% set page_next = page_id +1 %}
+                        <li>
+                            <a href="/album/{{album_id}}&{{page_next}}">&raquo;</a>
+                        </li>
+                    {% else %}
+                        <li>
+                            <a href="#">&raquo;</a>
+                        </li>
+                    {% endif %}
                 </ul>
             </div>
         </div>

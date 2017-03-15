@@ -11,6 +11,8 @@
     a. RWD: text small
     b. index outlook
 
+More Info.
+http://csalumni.web.nthu.edu.tw/files/13-1209-114970.php?Lang=zh-tw
 
 HonorDays:
 1. 1977: 計算機管理決策研究所 , 1997: 改名為 資訊工程學系
@@ -66,3 +68,48 @@ PS 照片提供~~~
 learn:
 two line navbar
 magnific-popup
+port 80 is default
+
+
+
+
+
+
+        <div class="row">
+            <div class="panel panel-default col-md-5 ">
+                <div class="panel-heading bg-purple" style="background:purple">
+                    <h3 class="align_center color-white"><i class="fa fa-fw fa-newspaper-o "></i><b>&nbsp;最新消息</b></h3>
+                </div>
+                <div class="panel-body align_center">
+                    <table class="table table-striped table-hover">
+                        <tbody class="NewsTable align_left">
+                            <tr><td><h4>系慶交流活動開放<a><b>報名</b></a>中～<br>精彩演講與活動千萬不可錯過！(含午宴)</h4></td></tr>
+                            <tr><td><h4>青春同學會！<br>歡迎各系友<a href='https://goo.gl/l3I1vD'><b>預約教室</b></a>大開Party小續當年資味！</h4></td></tr>
+                            <tr><td><h4>歡唱卡拉OK開放<a href='https://goo.gl/LONQML'><b>報名</b></a>拉！<br>點歌無限制，邀請您一起讓歌聲縈繞台達！</h4></td></tr>
+                            <tr><td><h4>寶貝也同樂——系列親子活動：<br>故事樂園與魔術氣球表演，開放<a href='https://goo.gl/dfOlCw'><b>報名</b></a>中。</h4></td></tr>
+                            <tr><td><h4>誰是人氣王？邀請您一同華山論「<a href='/voting'><b>讚</b></a>」！<br>神祕好禮等你來拿 ^.<<b>...</b></a>。</h4></td></tr>
+                        </tbody>
+                    </table>
+                    <a href="{{url_for('news')}}" class="btn bg-orange color-purple sr-button hover-color-white">Learn More</a>
+                </div>
+            </div>
+            <!-- end news -->
+
+            <!-- activity -->
+            <div class="panel panel-default  col-md-5 col-md-offset-2">
+                <div class="panel-heading bg-purple" style="background-color:purple">
+                    <h3 class="align_center color-white"><i class="fa fa-fw fa-gift"></i><b> 系列活動</b></h3>
+                </div>
+                <div class="panel-body  align_center">
+                    <table class="table table-striped table-hover" >
+                        <tbody class="NewsTable" id="scheduleBody_index">
+                        </tbody>
+                    </table>
+                    <a href="{{url_for('activity')}}" class="btn bg-orange color-purple sr-button hover-color-white">Learn More</a>
+                </div>
+            </div>
+            <!-- end activity -->
+        </div>
+        <br>
+        <br>
+         /.row 

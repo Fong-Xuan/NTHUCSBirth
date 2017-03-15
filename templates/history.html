@@ -35,7 +35,7 @@
         }
 
         .atBottom{
-            padding-top: 50%;
+            padding-top: 45%;
         }
 
         .padding0 {
@@ -44,6 +44,9 @@
 
         .seperateLine {
             background: black;
+        }
+        .align_center {
+            text-align: center;
         }
     </style>
 
@@ -78,9 +81,9 @@
                         col12_2.className = 'col-lg-12';
                         row2.appendChild(col12_2);
                             var aNextSection = document.createElement('a');
-                            aNextSection.className = 'btn btn-default page-scroll nextButton';
+                            aNextSection.className = 'page-scroll nextButton';
                             aNextSection.href = '#'+nextNodeId;
-                            aNextSection.innerHTML += '<b>'+'next'+'</b>'
+                            aNextSection.innerHTML += "<span class='fa fa-4x fa-arrow-down'></span>";
                             col12_2.appendChild(aNextSection);
 
                 }
@@ -116,20 +119,20 @@
 
 
             var seperateLine1 = document.createElement('div');
-            seperateLine1.className = "col-lg-12 col-md-12 col-sm-12 col-xs-12 seperateLine";
-            seperateLine1.innerHTML = 'test';
+            seperateLine1.className = "col-lg-12 col-md-12 col-sm-12 col-xs-12 seperateLine align_center";
+            seperateLine1.innerHTML = 'nthucs';
             var seperateLine2 = document.createElement('div');
-            seperateLine2.className = "col-lg-12 col-md-12 col-sm-12 col-xs-12 seperateLine";
-            seperateLine2.innerHTML = 'test';
+            seperateLine2.className = "col-lg-12 col-md-12 col-sm-12 col-xs-12 seperateLine align_center";
+            seperateLine2.innerHTML = 'nthucs';
             var seperateLine3 = document.createElement('div');
-            seperateLine3.className = "col-lg-12 col-md-12 col-sm-12 col-xs-12 seperateLine";
-            seperateLine3.innerHTML = 'test';
+            seperateLine3.className = "col-lg-12 col-md-12 col-sm-12 col-xs-12 seperateLine align_center";
+            seperateLine3.innerHTML = 'nthucs';
             var seperateLine4 = document.createElement('div');
-            seperateLine4.className = "col-lg-12 col-md-12 col-sm-12 col-xs-12 seperateLine";
-            seperateLine4.innerHTML = 'test';
+            seperateLine4.className = "col-lg-12 col-md-12 col-sm-12 col-xs-12 seperateLine align_center";
+            seperateLine4.innerHTML = 'nthucs';
             var seperateLine5 = document.createElement('div');
-            seperateLine5.className = "col-lg-12 col-md-12 col-sm-12 col-xs-12 seperateLine";
-            seperateLine5.innerHTML = 'test';
+            seperateLine5.className = "col-lg-12 col-md-12 col-sm-12 col-xs-12 seperateLine align_center";
+            seperateLine5.innerHTML = 'nthucs';
 
             document.body.insertBefore(seperateLine1, beforePoint);
             document.body.insertBefore(seperateLine2, beforePoint);
@@ -144,36 +147,5 @@
 {% endblock %}
 
 {% block content %}
-<br>
-<br>
-<br>
-<!--body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top"-->
-
-    <!-- Intro Section -->
-    <!--section id="first_section" class="page-section">
-        <div id="first_container" class="container">
-            <div  class="row">
-                <div  class="col-lg-12">
-                    <h1 id="first_title" class="col-lg-12" ><b>1977年 成立計算機管理決策所, 1997年 改名為資訊工程學系<b><h1>
-                </div>
-            </div>
-            <div  class="row atBottom">
-                <div  class="col-lg-12">
-                    <a id="first_aNext" class="btn btn-default page-scroll nextButton" href="#second">Click Me to Scroll Down!</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="second" class="page-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h1><h1>
-                    <a class="btn btn-default page-scroll" href="#third">Click Me to Scroll Down!</a>
-                </div>
-            </div>
-        </div>
-    </section-->
 
 {% endblock %}

@@ -5,10 +5,18 @@
     {% block title %}<title>{{tabName}}</title>{% endblock %}
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8 "/>
     <!-- For RWS -->
+    <link rel="author" href="https://www.facebook.com/profile.php?id=100001460325903">
+    <link rel="publisher" href="https://www.facebook.com/nthucsalumni/?fref=ts">
+    <meta name="description" content="清華大學 資工系 40 週年慶 國立 資訊 4/23 2017 台灣 新竹">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:title" content="清華大學資工系四十周年慶" >
+    <!--<meta property="og:url" content="網址">
+    <meta property="og:image" content="要顯示的縮圖網址">
+    <meta property="og:description" content="網頁描述" >-->
     <!-- browser tab icon -->
-    <link rel="icon" href="../static/img/schoolLogo_white.png">
+    <link rel="icon" href="../static/img/index/schoolLogo.png">
 
 
 
@@ -42,10 +50,12 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+
     <style>
-        .dropdown .dropdown-menu{
-            display: block;
-            opacity: 0;
+        .navbar-nav>li.dropdown>.dropdown-menu{
+        /*.dropdown .dropdown-menu{*/
+            /*display: block;*/
+            /*opacity: 0;*/
             text-align: center;
             -moz-transition:    all 800ms ease-out;
             -webkit-transition: all 800ms ease-out;
@@ -53,14 +63,25 @@
             -ms-transition:     all 800ms ease-out;
             transition:         all 800ms ease-out;
         }
-        .dropdown:hover .dropdown-menu {
+        /*.dropdown:hover .dropdown-menu {
             display: block;
             opacity: 1;
+        }*/
+        .dropdown-menu {
+            border: 2px solid purple;
         }
+        .dropdown-menu li a{
+            font-weight: bold;
+            font-size: 20px;
+        }
+        /*.dropdown:visited .dropdown-menu {
+            display: block;
+            opacity: 1;
+        }*/
         .navbar-default .nav > li > a,
             .navbar-default .nav > li > a:focus {
             text-transform: uppercase;
-            font-weight: 700;
+            font-weight: bold;
             font-size: 25px;
         }
         .nav>li>.fa {
@@ -80,13 +101,41 @@
         body.lowPaddingTop{
             padding-top: 20px;
         }
+
+        .page-header{
+            border-bottom:1px solid #eee;
+            border-bottom-width: 3px;
+            border-bottom-style: solid;
+            border-bottom-color: purple;
+        }
+
+        .bottom-line{
+            border-bottom:1px solid #eee;
+            border-bottom-width: 2px;
+            border-bottom-style: solid;
+            border-bottom-color: #dbdbdb;
+
+        }
+
+        .padding-12{
+            padding:12px;
+        }
+        .border-round{
+            /*border: 2px solid #999999;
+            border-radius: 30px;*/
+            /*color:#999999;*/
+        }
     </style>
 
 </head>
 
 
 <body class="lowPaddingTop">
-    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top purplekBg">
+    {% if index %}
+    <nav id="mainNav"  class="navbar navbar-default navbar-fixed-top bg-empty">
+    {% else %}
+    <nav id="mainNav" style="background-color: purple" class="navbar navbar-default navbar-fixed-top">
+    {% endif %}
 		
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -95,10 +144,18 @@
                     <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
                 </button>
 				<a class="navbar-brand page-scroll col-md-3 col-xs-2 col-sm-2 col-lg-3" href="{{url_for('index')}}">
-					<img class="img-responsive"  src="../static/img/schoolLogo_white.png">
+                    {% if index %}
+					<img class="img-responsive"  src="../static/img/index/schoolLogo_2.png">
+                    {% else %}
+					<img class="img-responsive"  src="../static/img/index/schoolLogo_white.png">
+                    {% endif %}
                 </a>
 				<a class="navbar-brand page-scroll col-md-6 col-xs-4 col-sm-4 col-lg-6" style="padding: 10px 14px" href="{{url_for('index')}}">
-					<img class="row img-responsive"  src="../static/img/wordsLogo.png">
+                    {% if index %}
+					<img class="row img-responsive"  src="../static/img/index/wordsLogo.png">
+                    {% else %}
+					<img class="row img-responsive"  src="../static/img/index/wordsLogo_white.png">
+                    {% endif %}
                 </a>
 				<br>
             </div>
@@ -111,9 +168,13 @@
                 <ul class="row nav navbar-nav navbar navbar-right">
                     <!-- latest news and series activities -->
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        活動消息<b class="caret"></b>
-                        </a>
+                        {% if index %}
+                        <a class="dropdown-toggle" data-toggle="dropdown" style="color:purple" >
+                            活動消息<b class="caret"></b></a>
+                        {% else %}
+                        <a class="dropdown-toggle" data-toggle="dropdown" >
+                            活動消息<b class="caret"></b></a>
+                        {% endif %}
                         <ul class="dropdown-menu">
                             <li><a href="{{url_for ('news')}}">最新消息</a></li>
                             <li><a href="{{url_for ('activity')}}">系列活動</a></li>
@@ -121,11 +182,16 @@
                     </li>
                     <!-- celebration - other information -->
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        {% if index %}
+                        <a class="dropdown-toggle" data-toggle="dropdown" style="color:purple" >
                         歡慶40<b class="caret"></b>
+                        {% else %}
+                        <a class="dropdown-toggle" data-toggle="dropdown">
+                        歡慶40<b class="caret"></b></a>
+                        {% endif %}
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a href="{{url_for ('history')}}">歷史事紀</a></li>
+                            <li><a href="{{url_for ('history')}}">歷史沿革</a></li>
                             <li><a href="{{url_for ('celebrity')}}">風雲人物</a></li>
                             <li><a href="{{url_for ('yearPhotos')}}">年度合照</a></li>
                             <li><a href="{{url_for ('voting')}}">人氣競賽</a></li>
@@ -133,38 +199,34 @@
                     </li>
                     <!-- photos -->
                     <li>
-                        <a class="page-scroll" href="{{url_for('album')}}">相片集錦</a>
+                        {% if index %}
+                        <a style="color:purple" class="page-scroll" href="#album">光陰集錦</a>
+                        {% else %}
+                        <a class="page-scroll" href="{{url_for('album')}}">光陰集錦</a>
+                        {% endif %}
                     </li>
                     <!-- contact us -->
                     <li>
-                        <a class="page-scroll" href="{{url_for('index')}}">聯絡我們</a>
+                        {% if index %}
+                        <a style="color:purple" class="page-scroll" href="#contact" >聯絡我們</a>
+                        {% else %}
+                        <a class="page-scroll" href="/index#contact">聯絡我們</a>
+                        {% endif %}
                     </li>
 
-                <!-- icon links -->
-                    <!-- facebook activity page -->
                     <li >
-                        <a class="fa">|</a> 
-                    </li>
-                    <li >
-                        <a class="page-scroll fa fa-facebook sr-icons " href="https://www.facebook.com/csnthu/?fref=ts" target="fb"></a>
-                    </li>
-                    <!-- email to --> 
-                    <li >
-                        <a class="page-scroll fa fa-envelope sr-icons" href="mailto:alumni@cs.nthu.edu.tw" target="email"></a>
-                    </li> 
-                    <!-- location info: google map-->
-                    <li >
-                        <a class="page-scroll fa fa-map-marker sr-icons" href="https://www.google.com.tw/maps/place/台達館/@24.7958441,120.9900555,17z/" target="location"></a>
-                    </li>
-                    <!--home -->
-                    <li >
+                        {% if index %}
+                        <a style="color:purple" class="page-scroll fa fa-home sr-icons" href="{{url_for('index')}}"></a>
+                        {% else %}
                         <a class="page-scroll fa fa-home sr-icons" href="{{url_for('index')}}"></a>
+                        {% endif %}
                     </li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
         </div>
         <!-- /.container-fluid -->
+        <h5></h5>
     </nav>
     {% if title %}
     <div id="titleContainer" class="container">
@@ -175,27 +237,48 @@
                     <small>{{subtitle}}</small>
                 </h1>
                 {% if description %}
-                <p>「所謂大學者，非謂有大樓之謂也，有大師之謂也!」 ---- 梅貽琦</p> 
+                <p>{{description}}</p> 
                 {% endif %}
             </div>
 
         </div>
     </div>
-    {% endif %}
+    {% endif %} 
 
     <!-- child's content -->
     {% block content %}{% endblock %}
 
-    <hr id="footerPoint">
-        <!-- Footer -->
-        <footer>
-            <div class="row">
-                <div class="col-lg-4 col-lg-offset-4">
-                    <p>Copyright &copy; NTHUCS | 03-5714787 | nthucs@nthu.edu.tw</p>
-                </div>
+    <h1  id="footerPoint"></h1>
+    <!-- Footer -->
+    <footer class="container ">
+        {% if not index %}
+        <br>
+        <br>
+        <br>
+        {% endif %}
+        <div class="row">
+            <div class="col-md-12 bottom-line">
+                <span class=""></span>
             </div>
-            <!-- /.row -->
-        </footer>
+        </div>
+        <br>
+        <br>
+        <div class="row" style="text-align:center">
+            <a class="col-md-2 col-md-offset-3  border-round" href="https://www.facebook.com/csnthu/?fref=ts" target="fb"><img class="" src="../static/img/footer-fb.png"></a>
+            <!-- email to --> 
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <a class="col-md-2" href="mailto:alumni@cs.nthu.edu.tw" target="email"><img class="border-round" src="../static/img/footer-mail.png"></a>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <!-- location info: google map-->
+            <a class="col-md-2" href="https://www.google.com.tw/maps/place/台達館/@24.7958441,120.9900555,17z/" target="location"><img class="border-round" src="../static/img/footer-location.png"></a>
+        </div>
+        <br>
+        <br>
+        <div class="row" style="text-align:center">
+             <p style="color:#dbdbdb">Copyright &copy; NTHUCS | 03-5714787 | nthucs@nthu.edu.tw</p>
+        </div>
+        <!-- /.row -->
+    </footer>
 
 </body>
     {% block script%}{% endblock%}
