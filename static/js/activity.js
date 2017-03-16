@@ -104,12 +104,12 @@ if(activityBody){
     for(var i in activityRows){
         var tr = document.createElement("tr");
         tr.innerHTML = "\
-            <th scope='row'><h4><b>"+activityRows[i].name+"</b></h4></th>\n\
-            <td>"+activityRows[i].description+"</td>\n\
-            <td>"+activityRows[i].time+"</td>\n\
-            <td>"+activityRows[i].location+"</td>\n\
-            <td>"+activityRows[i].more+"</td>\n\
+            <th scope='row'><h4><b>"+activityRows[i].name+"</b><br>&nbsp;&nbsp;&nbsp;&nbsp;</h4></th>\n\
+            <td class='rwd_small_words'>"+activityRows[i].description+"</td>\n\
+            <td class='rwd_small_words'>"+activityRows[i].time+"<br>"+activityRows[i].location+"</td>\n\
+            <td class='rwd_small_words'>"+activityRows[i].more+"</td>\n\
         "
+            // "<td>"+activityRows[i].location+"</td>\n\
         activityBody.appendChild(tr);
     }
 }

@@ -75,54 +75,63 @@
             </div>
         </div>
     </header>
-    <section id="about" class="fluid-container bg-orange-light" >
+    <div id="about"></div>
+    <section class="fluid-container bg-orange-light" >
         <br>
-        <div class="row">
-            <div class="col-lg-2 col-lg-offset-2 col-md-2 col-md-offset-2 col-sm-4 col-xs-12 text-center">
-                <div class="service-box row">
-                    <i class="fa fa-5x fa-clock-o text-primary sr-icons hover-size-bigger"></i>
-                </div>
-                <div class="service-box row">
-                    <i class="fa fa-2x text-primary font-bold">09:30~16:00</i>
-                    <br>    
-                    <i class="fa fa-2x text-primary ">04/23</i>
-                    <br>    
-                    <i class="fa fa-2x text-primary ">2017</i>
-                </div>
-            </div>
-            <div class="col-lg-2 col-lg-offset-1 col-md-2 col-md-offset-1 col-sm-4  col-xs-12 text-center">
-                <div class="service-box row">
-                    <i class="fa fa-5x fa-map-marker text-primary sr-icons hover-size-bigger"></i>
-                </div>
-                <div class="service-box row">
-                    <i class="fa fa-2x text-primary font-bold">國立清華大學</i>
-                    <br>    
-                    <i class="fa fa-2x text-primary ">台達館</i>
-                    <br>    
-                    <i class="fa fa-2x text-primary ">中庭</i>
-                </div>
-            </div>
-            <div class="col-lg-2 col-lg-offset-1  col-md-2 col-md-offset-1  col-sm-4 col-xs-12 text-center">
-                <div class="service-box row">
-                    <i class="fa fa-5x fa-facebook-square text-primary sr-icons hover-size-bigger"></i>
-                </div>
-                <div class="service-box row">
-                    <i class="fa fa-2x text-primary font-bold">清大資工系40週年</i>
-                    <br>    
-                    <i class="fa fa-2x text-primary ">系慶暨資應所</i>
-                    <br>    
-                    <i class="fa fa-2x text-primary ">系所友回娘家</i>
-                </div>
-                
-            </div>
+        <div class="row" id="about-id">
+            <script>
+                function setInfo(element, className){
+                    element.className = className;
+                }
+                function setImg(element, awesomeFont){
+                    element.className = "service-box row";
+                    var img = document.createElement('i');
+                    img.className = "fa fa-5x " + awesomeFont + " text-primary sr-icons hover-size-bigger";
+                    element.appendChild(img);
+                }
+                function setWords(element, words){
+                    element.className = "row";
+                    for(var i in words){
+                        var word = document.createElement('font');
+                        word.innerHTML = words[i];
+                        word.className = "about-words";
+                        if(i == 0)
+                            word.className += " font-bold";
+                        element.appendChild(word);
+                        element.innerHTML += "<br>";
+                    } 
+                }
+                var imgs  = ["fa-clock-o", "fa-map-marker", "fa-facebook-square"];
+                var wordsList = [["09:30~16:00", "04/23", "2017"], ["國立清華大學", "台達館", "中庭"], ["清大資工系", "40週年系慶", "暨資應所系所友", "回娘家"]];
+                var about_id = document.getElementById('about-id'); 
+                var info_class = ["col-lg-2 col-lg-offset-2 col-md-2 col-md-offset-2 col-sm-4 col-xs-12 text-center",
+                                  "col-lg-2 col-lg-offset-1 col-md-2 col-md-offset-1 col-sm-4  col-xs-12 text-center",
+                                  "col-lg-2 col-lg-offset-1  col-md-2 col-md-offset-1  col-sm-4 col-xs-12 text-center"]
+                for(var i=0; i<3; i++){
+                    var about_info_words = document.createElement('div'); 
+                    setWords(about_info_words, wordsList[i]);
+
+                    var about_info_img = document.createElement('div');
+                    setImg(about_info_img, imgs[i]);
+
+                    var about_info = document.createElement('div');
+                    setInfo(about_info, info_class[i]);
+
+                    about_info.appendChild(about_info_img);
+                    about_info.appendChild(about_info_words);
+
+                    about_id.appendChild(about_info);
+                }
+            </script> 
         </div>
         <br>
     </section>
 
     <br>
+    <div id="schedule"></div>
     <br>
     <br>
-    <section class="" id="schedule">
+    <section class="" >
         <!-- .row -->
         <div class="row">
             <!-- news -->
@@ -168,9 +177,10 @@
     </section>
 
     <br>
+    <div id="services"></div>
     <br>
     <br>
-    <section id="services" class="fluid-container bg-purple-light" >
+    <section class="fluid-container bg-purple-light" >
         <div class="container">
             <!--<div class="row">
                 <div class="col-lg-12 text-center">
@@ -260,9 +270,10 @@
     </section>
     <br>
     <br>
+    <div id="album"></div>
     <br>
     <br>
-    <section id="album" class="no-padding container border-purple-light">
+    <section class="no-padding container border-purple-light">
         <div class="container text-center">
             <div class="call-to-action">
                 <br>

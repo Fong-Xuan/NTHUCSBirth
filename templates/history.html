@@ -6,146 +6,365 @@
 
 {% block script %}
 
-
     <!-- Custom CSS -->
-    <link href="../static/css/scrolling-nav.css" rel="stylesheet">
-    
-
-    <!-- Scrolling Nav JavaScript -->
-    <script src="../static/vendor/bootstrap/js/jquery.easing.min.js"></script>
-    <script src="../static/vendor/bootstrap/js/scrolling-nav.js"></script>
+    <!--<link href="../static/css/landing-page.css" rel="stylesheet">-->
 
     <style>
-        nav#mainNav{
-            padding: 0px;
+        body,
+        html {
+            width: 100%;
+            height: 100%;
         }
 
-        section{
-            background-image: url("../static/img/history/first.jpg");
-            background-size: 100% 100%; 
-            /*margin-top: 5%;*/
-            background-repeat: no-repeat;
-            height: 100%;
-            padding-top:100px; 
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
+            font-weight: 700;
+        }
+
+        .topnav {
+            font-size: 14px; 
+        }
+
+        .lead {
+            font-size: 18px;
+            font-weight: 400;
+        }
+
+        .intro-header {
+            padding-top: 50px; /* If you're making other pages, make sure there is 50px of padding to make sure the navbar doesn't overlap content! */
+            padding-bottom: 50px;
             text-align: center;
+            color: #f8f8f8;
+            /*background: url(../img/intro-bg.jpg) no-repeat center center;*/
+            background: url(../static/img/history/1.jpg) no-repeat center center;
+            background-position: center; 
+            background-size: 100% 100%; 
+        }
+
+        .intro-message {
+            position: relative;
+            padding-top: 10%;
+            padding-bottom: 10%;
+        }
+
+        .intro-message > h1 {
+            margin: 0;
+            text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+            font-size: 5em;
+        }
+
+        .intro-divider {
+            width: 400px;
+            border-top: 1px solid #f8f8f8;
+            border-bottom: 1px solid rgba(0,0,0,0.2);
+        }
+
+        .intro-message > h3 {
+            text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+        }
+
+        @media(max-width:767px) {
+            .intro-message {
+                padding-bottom: 15%;
+            }
+
+            .intro-message > h1 {
+                font-size: 3em;
+            }
+
+            ul.intro-social-buttons > li {
+                display: block;
+                margin-bottom: 20px;
+                padding: 0;
+            }
+
+            ul.intro-social-buttons > li:last-child {
+                margin-bottom: 0;
+            }
+
+            .intro-divider {
+                width: 100%;
+            }
+        }
+
+        .network-name {
+            text-transform: uppercase;
+            font-size: 14px;
+            font-weight: 400;
+            letter-spacing: 2px;
+        }
+
+        .content-section-a {
+            padding: 50px 0;
+            /*background-color: #f8f8f8;*/
+            background-color: #e6e6e6;
+        }
+
+        .content-section-b {
+            padding: 50px 0;
+            border-top: 1px solid #e7e7e7;
+            border-bottom: 1px solid #e7e7e7;
+        }
+
+        .section-heading {
+            margin-bottom: 30px;
+            color:black;
+        }
+
+        .section-heading-spacer {
+            float: left;
+            width: 200px;
+            border-top: 3px solid #e7e7e7;
+            margin-top: 0px;
+            margin-bottom: 5px;
+        }
+
+        .section-heading-year {
+            color:purple;
+            /*border-bottom: 2px gray solid;*/
+        }
+        hr.section-heading-year{
+            margin-top:0px;
+        }
+        
+        .section-heading-spacer {
+            margin-bottom: 5px;
+        }
+
+
+        @media(max-width:1199px) {
+        }
+
+        @media(max-width:767px) {
+        }
+
+
+        p.copyright {
+            margin: 15px 0 0;
         }
         .title{
             background-color: rgba(255, 255, 255, 0.58);
             border-radius: 8px;
         }
 
-        .atBottom{
-            padding-top: 45%;
+        #first{
+            height:80%; 
+            margin-top:4%; 
+        }
+        #last{
+            height:80%; 
+            background-image: url(../static/img/history/7.jpg);
         }
 
-        .padding0 {
-            padding: 0px 0px 0px 0px;
-        }
-
-        .seperateLine {
-            background: black;
-        }
-        .align_center {
+        .align-center{
             text-align: center;
         }
+        .intro-word{
+            text-align: center;
+        }
+    
+        .fadeIn {
+            -webkit-animation: fadein 1.5s ease-out; /* Safari, Chrome and Opera > 12.1 */
+            -moz-animation: fadein 1.5s ease-out; /* Firefox < 16 */
+                -ms-animation: fadein 1.5s ease-out; /* Internet Explorer */
+                -o-animation: fadein 1.5s ease-out; /* Opera < 12.1 */
+                    animation: fadein 1.5s ease-out;
+            display: block;
+        }
+
+
+        @keyframes fadein {
+            from { opacity: 0; }
+            to   { opacity: 0.8; }
+        }
+
+        /* Firefox < 16 */
+        @-moz-keyframes fadein {
+            from { opacity: 0; }
+            to   { opacity: 0.8; }
+        }
+
+        /* Safari, Chrome and Opera > 12.1 */
+        @-webkit-keyframes fadein {
+            from { opacity: 0; }
+            to   { opacity: 0.8; }
+        }
+
+        /* Internet Explorer */
+        @-ms-keyframes fadein {
+            from { opacity: 0; }
+            to   { opacity: 0.8; }
+        }
+
+        /* Opera < 12.1 */
+        @-o-keyframes fadein {
+            from { opacity: 0; }
+            to   { opacity: 0.8; }
+        }
+
     </style>
-
-    <script>
-        function createSection(id, className, title, bgImgs, nextNodeId){
-            var section = document.createElement("section");
-            section.id = id;
-            //section.className = className;
-           // section.setAttribute('backgroundImage', "../static/img/history/first.jpg");
-            console.log(section.style);
-
-            var container = document.createElement('div');
-            container.className = 'container';
-            section.appendChild(container);
-                var row1 = document.createElement('div');
-                row1.className = 'row';
-                container.appendChild(row1);
-                    var col12 = document.createElement('div');
-                    col12.className = 'col-lg-12';
-                    row1.appendChild(col12);
-                        var h1Title = document.createElement('h1');
-                        h1Title.className = 'title';
-                        h1Title.innerHTML += '<b>'+title+'</b>'
-                        col12.appendChild(h1Title);
-                        
-                
-                if(nextNodeId != null){
-                    var row2 = document.createElement('div');
-                    row2.className = 'row atBottom';
-                    container.appendChild(row2);
-                        var col12_2 = document.createElement('div');
-                        col12_2.className = 'col-lg-12';
-                        row2.appendChild(col12_2);
-                            var aNextSection = document.createElement('a');
-                            aNextSection.className = 'page-scroll nextButton';
-                            aNextSection.href = '#'+nextNodeId;
-                            aNextSection.innerHTML += "<span class='fa fa-4x fa-arrow-down'></span>";
-                            col12_2.appendChild(aNextSection);
-
-                }
-
-
-
-                 return section;   
-
-        }
-        
-        var firstSection = document.getElementById('first_section');
-        var bgPicture = document.createElement('img');
-
-        var sectionCount = 6;
-
-        var bgImgs = ['first.jpg','second.jpg','third.jpg','fouth.jpg','fifth.jpg','sixth.jpg',''];
-        var titles = ['1977 成立計算機管理決策研究所 , 1997 改名為資訊工程學系', '1989 李家同，1994 陳文村, 2016 許健平 教授獲得教育部學術獎', '1998,1999 在劉炯朗校長帶領下，清華學術聲望奪全台第1', 
-                        '2005 微軟亞洲研究院與台灣清華大學再度簽署「人才交流備忘錄」', '2011, 台達館落成', '2014-2016: QS CS subject ranking: 前百大, '];
-        var sectionIds = ['first', 'second', 'third', 'fourth', 'fifth', 'sixth'];
-
-        for(var sectionId=0; sectionId<sectionCount; sectionId++){
-            var section_tmp = null;
-            if(sectionId == sectionCount-1)
-                var section_tmp = createSection(sectionIds[sectionId], 'page-section', titles[sectionId], bgImgs[sectionId], null);
-            else
-                var section_tmp = createSection(sectionIds[sectionId], 'page-section', titles[sectionId], bgImgs[sectionId], sectionIds[sectionId+1]);
-            
-            var beforePoint = document.getElementById('footerPoint')
-
-            var bgImgLoc = "../static/img/history/";
-            section_tmp.style.backgroundImage =  'url('+bgImgLoc + bgImgs[sectionId]+')';
-            document.body.insertBefore(section_tmp, beforePoint);
-
-
-            var seperateLine1 = document.createElement('div');
-            seperateLine1.className = "col-lg-12 col-md-12 col-sm-12 col-xs-12 seperateLine align_center";
-            seperateLine1.innerHTML = 'nthucs';
-            var seperateLine2 = document.createElement('div');
-            seperateLine2.className = "col-lg-12 col-md-12 col-sm-12 col-xs-12 seperateLine align_center";
-            seperateLine2.innerHTML = 'nthucs';
-            var seperateLine3 = document.createElement('div');
-            seperateLine3.className = "col-lg-12 col-md-12 col-sm-12 col-xs-12 seperateLine align_center";
-            seperateLine3.innerHTML = 'nthucs';
-            var seperateLine4 = document.createElement('div');
-            seperateLine4.className = "col-lg-12 col-md-12 col-sm-12 col-xs-12 seperateLine align_center";
-            seperateLine4.innerHTML = 'nthucs';
-            var seperateLine5 = document.createElement('div');
-            seperateLine5.className = "col-lg-12 col-md-12 col-sm-12 col-xs-12 seperateLine align_center";
-            seperateLine5.innerHTML = 'nthucs';
-
-            document.body.insertBefore(seperateLine1, beforePoint);
-            document.body.insertBefore(seperateLine2, beforePoint);
-            document.body.insertBefore(seperateLine3, beforePoint);
-            document.body.insertBefore(seperateLine4, beforePoint);
-            document.body.insertBefore(seperateLine5, beforePoint);
-
-        }
-        
-    </script>
 
 {% endblock %}
 
 {% block content %}
+    <!-- Header -->
+    <a name="about"></a>
+    <div id="first" class="intro-header fadeIn" >
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="intro-message">
+                        <h1 class="section-heading-year ">1977年<h1>
+                            <br>
+                        <h2 class="section-heading title">清華成立計算機管理決策研究所</h2>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.intro-header -->
+
+    <!-- Page Content -->
+
+	<a  name="services"></a>
+    <div class="content-section-a">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-sm-6 intro-word">
+                    <h2 class="section-heading-year">1983年<h2>
+                    <h3 class="section-heading">增設博士班<h3>
+                    <h2 class="section-heading-year">1988年<h2>
+                    <h3 class="section-heading">改名為「資訊科學研究所」<h3>
+                    <h2 class="section-heading-year">1993年<h2>
+                    <h3 class="section-heading">教育部全國電資系所科系評鑑<br>唯一被建議增設雙班以利更多學子。<h3>
+                </div>
+                <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+                    <img class="img-responsive" src="../static/img/history/2.jpg" alt="">
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.content-section-a -->
+
+    <div class="content-section-b">
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6 intro-word">
+                    <h2 class="section-heading-year">1995年<h2>
+                    <h3 class="section-heading">所、系合併，稱「資訊科學系」，<br>設大學部、碩士班及博士班。<h3>
+                    <h2 class="section-heading-year">1995年<h2>
+                    <h3 class="section-heading">美國計算機學會(ACM)<br>全球資訊研究單位排名，<br>清華資工名列第五十八名，<br>為全亞洲第一。</h3>
+                </div>
+                <div class="col-lg-5 col-sm-pull-6  col-sm-6">
+                    <img class="img-responsive" src="../static/img/history/3.jpg" alt="">
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.content-section-b -->
+
+    <div class="content-section-a">
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-5 col-sm-6 intro-word">
+                    <h2 class="section-heading-year">1997年<h2>
+                    <h3 class="section-heading">更名為「資訊工程學系」<br>增設大學部第二班、<br>改隸「電機資訊學院」 </h3>
+                    <h2 class="section-heading-year">1997年<h2>
+                    <h3 class="section-heading">獲教育部第一期通訊科技教育改進計畫<br>執行成效特優獎。<h3>
+                </div>
+                <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+                    <img class="img-responsive" src="../static/img/history/4.jpg" alt="">
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.content-section-a -->
+
+    <div class="content-section-b">
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6 intro-word">
+                    <h2 class="section-heading-year">2002年<h2>
+                    <h3 class="section-heading">成立「資訊系統與應用研究所」</h3>
+                    <h2 class="section-heading-year">2002年<h2>
+                    <h3 class="section-heading">增設大學部第三班。（梅班）<h3>
+                </div>
+                <div class="col-lg-5 col-sm-pull-6  col-sm-6">
+                    <img class="img-responsive" src="../static/img/history/5.jpg" alt="">
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.content-section-b -->
+
+    <div class="content-section-a">
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-5 col-sm-6 intro-word">
+                    <h2 class="section-heading-year">2005年<h2>
+                    <h3 class="section-heading">微軟亞洲研究院與台灣清華大學<br>再度簽署「人才交流備忘錄」 </h3>
+                    <h2 class="section-heading-year">2011年<h2>
+                    <h3 class="section-heading">台達館落成<h3>
+                </div>
+                <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+                    <img class="img-responsive" src="../static/img/history/6.jpg" alt="">
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.content-section-a -->
+
+    <div id="last" class="intro-header" >
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="intro-message">
+                        <h1 class="section-heading-year ">2014-2016年<h1>
+                        <br>
+                        <h2 class="section-heading title">Quacquarelli Symonds(QS) 全球大學CS相關科系排名， <br>清華資工前進百大！</h2>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.intro-header -->
+
 
 {% endblock %}

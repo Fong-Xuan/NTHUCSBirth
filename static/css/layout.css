@@ -1,3 +1,4 @@
+
 /*!
  * Start Bootstrap - Creative v3.3.7+1 (http://startbootstrap.com/template-overviews/creative)
  * Copyright 2013-2016 Start Bootstrap
@@ -25,6 +26,7 @@ a {
   -moz-transition: all 0.35s;
   transition: all 0.35s;
   color: #ffa600;
+  /*color: #F05F40;*/
 }
 a:hover,
 a:focus {
@@ -66,7 +68,7 @@ aside {
   padding: 0;
 }
 .navbar-default {
-  background-color: white;
+  background-color: purple;
   border-color: rgba(34, 34, 34, 0.05);
   font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
   -webkit-transition: all 0.35s;
@@ -113,8 +115,8 @@ aside {
 }
 @media (min-width: 768px) {
   .navbar-default {
-    background-color: transparent;
-    /*border-color: rgba(255, 255, 255, 0.3);*/
+    background-color: #800080;
+    border-color: #800080;
   }
   .navbar-default .navbar-header .navbar-brand {
     color: rgba(255, 255, 255, 0.7);
@@ -134,8 +136,9 @@ aside {
   }
   .navbar-default.affix {
     /*background-color: rgba(128, 0, 128, 0.74);*/
-    background-color: rgba(255, 255, 255, 0.74);
-    border-color: rgba(34, 34, 34, 0.05);
+    /*background-color: rgba(255, 255, 255, 0.74);*/
+    background-color: rgba(128, 0, 128, 0.7);
+    /*border-color: rgba(34, 34, 34, 0.05);*/
   }
   .navbar-default.affix div{
     background-color: rgba(0, 0, 0, 0);
@@ -318,6 +321,11 @@ header .header-content .header-content-inner p {
   -moz-transition: all 0.35s;
   transition: all 0.35s;
 }
+@media (max-width:767px){
+    .navbar-default .navbar-nav .open .dropdown-menu>li>a {
+        color: white;
+    }
+}
 .btn-default:hover,
 .btn-default:focus,
 .btn-default.focus,
@@ -414,7 +422,7 @@ fieldset[disabled] .btn-primary.active {
   text-transform: uppercase;
 }
 .btn-xl {
-  padding: 10px 30px;
+  padding: 15px 30px;
 }
 ::-moz-selection {
   color: white;

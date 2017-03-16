@@ -15,7 +15,7 @@
     <meta property="og:url" content="www.alumni40.cs.nthu.edu.tw">
     <meta property="og:image" content="../static/img/fb_share.jpg">
     <meta property="og:description" content="清華大學資訊工程學系歡慶四十週年慶！2017/4/23(日)9:30@台達館一樓中庭！！" >
-    <!-- browser tab icon 
+    <!-- browser tab icon--> 
     <link rel="icon" href="../static/img/index/schoolLogo.png">
 
 
@@ -35,7 +35,11 @@
 
     <!-- Theme CSS -->
     <!--link href="../static/css/creative.min.css" rel="stylesheet"-->
+    {% if index %}
     <link href="../static/css/creative.css" rel="stylesheet">
+    {% else %}
+    <link href="../static/css/layout.css" rel="stylesheet">
+    {% endif %}
 
 
     <!-- jQuery -->
@@ -149,7 +153,7 @@
     {% if index %}
     <nav id="mainNav"  class="navbar navbar-default navbar-fixed-top bg-empty">
     {% else %}
-    <nav id="mainNav" style="background-color: purple" class="navbar navbar-default navbar-fixed-top">
+    <nav id="mainNav"  class="navbar navbar-default navbar-fixed-top">
     {% endif %}
 		
         <div class="container">
@@ -184,7 +188,7 @@
                     <!-- latest news and series activities -->
                     <li class="dropdown">
                         {% if index %}
-                        <a   class="dropdown-toggle" data-toggle="dropdown" style="color:purple; cursor:pointer" >
+                        <a href="#schedule" class="page-scroll" style="color:purple; cursor:pointer" >
                             <b>活動消息</b><b class="caret"></b></a>
                         {% else %}
                         <a  style="cursor:pointer" class="dropdown-toggle" data-toggle="dropdown" >
@@ -198,13 +202,13 @@
                     <!-- celebration - other information -->
                     <li class="dropdown">
                         {% if index %}
-                        <a class="dropdown-toggle" data-toggle="dropdown" style="color:purple; cursor:pointer" >
-                        <b>歡慶40</b><b class="caret"></b>
+                        <a href="#services" class="page-scroll" style="color:purple; cursor:pointer" >
+                            <b>歡慶40</b><b class="caret"></b>
+                        </a>
                         {% else %}
                         <a class="dropdown-toggle" data-toggle="dropdown" style="cursor: pointer">
                         <b>歡慶40</b><b class="caret"></b></a>
                         {% endif %}
-                        </a>
                         <ul class="dropdown-menu">
                             <li><a href="{{url_for ('history')}}"><b>歷史沿革</b></a></li>
                             <li><a href="{{url_for ('celebrity')}}"><b>風雲人物</b></a></li>

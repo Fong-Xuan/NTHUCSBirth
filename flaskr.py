@@ -8,6 +8,7 @@ app = Flask(__name__)
 
 Photo = namedtuple('Photo', ['name', 'src', 'index', 'page'])
 albums = [[], [], [], []] 
+album_names = ['30週年慶相簿', '各實驗室懷舊相簿', '歷年相片合輯']
 
 @app.route("/")
 @app.route("/index")
@@ -64,8 +65,10 @@ def album(album_id = 1, page_id = 1):
     print(str(page_id*40) + ", " + str((page_id+1)*40))
     #print(photos)
 
+
+
     return render_template('album.html', tabName="相簿", title="光陰集錦", subtitle="系慶相簿", \
-                            album_id = album_id + 1, page_id = page_id + 1, photos=photos, pages_count = pages_count)
+                            album_id = album_id + 1, page_id = page_id + 1, photos=photos, pages_count = pages_count, albumName = album_names[album_id])
 
 
 @app.route("/voting")
@@ -74,7 +77,7 @@ def voting():
 
 @app.route("/history")
 def history():
-    return render_template('history_tmp.html', tabName="歷史沿革", title="", subtitle="")
+    return render_template('history.html', tabName="歷史沿革", title="", subtitle="")
 
 @app.route("/celebrity")
 def celebrity():

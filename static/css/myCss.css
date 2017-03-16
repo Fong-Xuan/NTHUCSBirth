@@ -107,31 +107,31 @@
 
 @keyframes fadein {
     from { opacity: 0; }
-    to   { opacity: 0.8; }
+    to   { opacity: 0.75; }
 }
 
 /* Firefox < 16 */
 @-moz-keyframes fadein {
     from { opacity: 0; }
-    to   { opacity: 0.8; }
+    to   { opacity: 0.75; }
 }
 
 /* Safari, Chrome and Opera > 12.1 */
 @-webkit-keyframes fadein {
     from { opacity: 0; }
-    to   { opacity: 0.8; }
+    to   { opacity: 0.75; }
 }
 
 /* Internet Explorer */
 @-ms-keyframes fadein {
     from { opacity: 0; }
-    to   { opacity: 0.8; }
+    to   { opacity: 0.75; }
 }
 
 /* Opera < 12.1 */
 @-o-keyframes fadein {
     from { opacity: 0; }
-    to   { opacity: 0.8; }
+    to   { opacity: 0.75; }
 }
 
 
@@ -158,7 +158,7 @@ div#cover_photo {
     position: absolute; 
     
     z-index: 2;
-    opacity: 0.8; 
+    opacity: 0.75; 
 }
 @media (max-width: 768px) {
     img#cover_words {
@@ -170,7 +170,6 @@ div#cover_photo {
     div.album_photos {
         height: 200px;
     }
-}
 }
 
 .blur{
@@ -268,4 +267,9 @@ ul.NewsList li{
 
 .bigfont {
     font-size: 24px;
+}
+
+.about-words{
+    font-size: 1.5em;
+    color:purple;
 }

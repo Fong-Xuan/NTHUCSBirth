@@ -97,7 +97,7 @@
             {% endif %}
                 <a href="/album/3&1">
                     <img class="img-responsive" src="../static/img/photos/album.png">
-                    <h4>歷年相片合集</h4>
+                    <h4>歷年相片合輯/</h4>
                 </a>
             </div>
         </div>
@@ -106,7 +106,7 @@
 
     
     <div class="container popup-gallery ">
-        <h2 id="album_title" class="page-header">30週年慶相簿</h2>
+        <h2 id="album_title" class="page-header">{{albumName}}</h2>
         {% if photos %}
             {% set counter = 0 %}
             {% for photo in photos %}
