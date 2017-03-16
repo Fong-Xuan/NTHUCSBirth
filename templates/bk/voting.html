@@ -1,0 +1,151 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    {{super()}}
+{% endblock %}
+
+{% block script %}
+    <!-- Custom CSS -->
+    <link href="../static/css/4-col-portfolio.css" rel="stylesheet">
+    <script src="../static/js/voting.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="../static/vendor/scrollreveal/scrollreveal.min.js"></script>
+    <script src="../static/vendor/magnific-popup/jquery.magnific-popup.js"></script>
+
+    <style>
+        .displayNone{
+            display: none;
+        }
+
+        #accountList{
+            position:fixed;
+        }
+
+        @media (max-width: 1073px) {
+            #accountList{
+                background-color: black;
+                position: relative;
+            }
+        }
+        p{
+            font-size: 1.5em;
+        }
+    </style>
+
+{% endblock %}
+
+{% block content %}
+        <!--div id="accountContainer" class="row container-fluid col-md-1 col-md-offset-1 col-lg-1 col-lg-offset-1 col-sm-0 col-xs-0 ">
+            <br>
+            <br>
+            <br>
+            <div id="accountList" class="list-group" style="">
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <div class="fb-login-button" data-max-rows="2" data-size="large" data-show-faces="false" data-auto-logout-link="false" onlogin="checkLoginState()"></div>
+                    </li>
+                    <li class="list-group-item">
+                        <img id="user_photo" src="../static/img/voting/emptyHead.jpg" class="img-responsive" style="width:120px"/>
+                    </li>
+                    <li class="list-group-item">
+                        <h4 id="user_name">Not Logged In</h4>
+                    </li>
+                </ul>
+            </div>
+        </div-->
+        <!-- /#accountContainer -->
+        
+            <br>
+            <!-- Page Heading -->
+            <div class="container">
+                <ul class="nav nav-pills">
+                    <li class="active"><a data-toggle="pill" href="#home">遊戲規則</a></li>
+                    <li><a data-toggle="pill" href="#menu1">戰況分析</a></li>
+                </ul>
+                
+                <div class="tab-content">
+                    <div id="home" class="tab-pane fade in active">
+                        <h3><b>【眾志成城 - 人氣王競賽】</b></h3>
+                        <p> 「懷念那年夏天，清華園中...你們的身影！」 ...多少年的人生、多少人的青春，
+                            我們都奉獻給了清華資工。<br>
+                            如今，清華資工四十週年慶，邀請您一同乘坐時光機器，
+                            回溯到那美好的夏天，<br>
+                            找回當時最珍貴的寶藏 ── 同窗的摯友們，<br>
+                            並將回憶用底片紀錄下來！<br>
+                            只要能收集到最多寶藏（人數最多），或是照片得到最多讚數的~~<br>
+                            除了獲得回憶以外，<br>
+                            更可以把清華資工精心準備的人氣大獎抱回家喔！！
+                        </p>
+                        <p><b>時間：</b>4/23（日）早上9：30～16：00</p>
+                        <p><b>地點:</b>清大台達一樓中庭</p>
+                        <p><b>參賽條件/分組：</b></p>
+                        <p><b>活動說明：</b>攝影師將於舞台前主視覺--四十週年紀念看板前幫各級系友拍團體照留念。可立即上傳並分享至四十週年粉絲專頁活動網頁按讚！</p>
+                        <p><b>競賽規則：</b>拍照最多人數的系級以及按讚數最多的系級將可獲頒最佳人氣獎！（以當天下午2點前之按讚數來評比）</p>
+                        <p><b>補充：現場還設有自拍機可立即將照片列印留存唷！</b></p>
+                        
+                    <div>
+                        <img class="img-responsive" src="../static/img/voting/voting.jpg" style="width:80%">
+                    </div>
+
+                    </div>
+
+
+                    <div id="menu1" class="tab-pane fade">
+                        <!--<div id="loginButton_inner" class="fb-login-button" data-max-rows="2" data-size="large" data-show-faces="false" data-auto-logout-link="false" onlogin="checkLoginState()"></div>-->
+                        <br>
+                        <br>
+                        <h4>&nbsp;&nbsp;&nbsp;&nbsp; 2017/4/23 開放，敬請期待</h4>
+                    <!-- /.row -->
+                        <div >
+                            <!-- Projects Row -->
+                            <div class="row  popup-gallery"  id="imagesContainer">
+                            </div>
+                            <!-- /.row -->
+                        </div>
+                        <!-- /.row -->
+
+
+                        <!-- Pagination -->
+                        <div id="pagination" class="row text-center displayNone">
+                            <div class="col-lg-12">
+                                <ul class="pagination">
+                                    <li>
+                                        <a href="#">&laquo;</a>
+                                    </li>
+                                    <li class="active">
+                                        <a href="#">1</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">2</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">3</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">4</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">5</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">&raquo;</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- /.row -->
+                        <!-- Pagination End -->
+                    </div>
+                    <!--div id="menu2" class="tab-pane fade">
+                    </div-->
+                </div>
+            </div>
+            <!-- /.cntainer -->
+        <!-- Main part end -->
+
+        <!-- Footer -->
+
+    </div>
+    <!-- /.container -->
+{% endblock %}

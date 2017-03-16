@@ -4,7 +4,14 @@ from collections import namedtuple
 from os import listdir
 from os.path import isfile
 from os.path import isdir
-app = Flask(__name__)
+from flask_compress import Compress
+compress = Compress()
+def start_app():
+    app = Flask(__name__)
+    compress.init_app(app)
+    return app
+
+app = start_app()
 
 Photo = namedtuple('Photo', ['name', 'src', 'index', 'page'])
 albums = [[], [], [], []] 

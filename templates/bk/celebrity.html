@@ -1,0 +1,130 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    {{super()}}
+{% endblock %}
+
+{% block script %}
+    <link href="../static/css/round-about.css" rel="stylesheet">
+    <script>
+        class Celebrity{
+            constructor(time, name, graduate, now, teacher, number, imgSrc){
+                this.time = time;
+                this.name = name;
+                this.graduate = graduate;
+                this.now = now;
+                this.teacher = teacher;
+                this.number = number;
+                this.imgSrc = imgSrc; 
+            }
+        }
+        var Celebrities = new Array();
+        var startTime = 2001;
+        var number = ['第一屆', '第二屆', '第三屆', '第四屆', '第五屆', '第六屆', '第八屆', '第九屆', '第十屆', '第十一屆', '第十二屆', '第十三屆', '第十四屆', '第十五屆', '第十六屆', ]
+        var names = ['張真誠', '張培鏞', '劉龍龍', '黃瑞榮', '劉鈞', '黃興燦', '黃其益', '蔡文弘', '簡良益', '蘇泓萌', '陳健輝', '魯立忠 ' , '謝永清 ', '張瑞雄', '李怡德'];
+        var graduate = ['計管所 碩士班79級','計管所 碩士班81級', '資工系 博士班87級', '計管所 碩士班86級<br>資工系 博士班90級', '計管所 碩士班87級', 
+                        '資訊科學系系主任', '計管所 碩士班89級<br>資工系 博士班92級', '計管所 碩士班88級', '資工系 碩士班99級', '計管所 碩士班84級', 
+                        '計管所 碩士班83級<br>資工系 博士班87級', '計管所 碩士班84級', '計管所 碩士班89級', '計管所 博士班88級', '計管所碩士班82級']; 
+
+
+        var now = ['國立中正大學 資工系教授', '叡揚資訊 執行長', '翔威國際 總經理', '鈺寶科技 總經理', '凌華科技 董事長', '中央大學 資工系教授', '智原科技國際 業務副總經理暨公司發言人',
+        '廣達電腦公司 資深副總經理暨 第二事業群總經理', '研勤科技股份有限公司 董事長兼總經理', '晶心科技股份有限公司 技術長(CTO)兼研發/技術企劃副總經理', '台大資工系 終生特聘教授', '台積電數位智慧財產設計方案處處長', 
+        '補丁科技 研發處副總經理', '國立臺北商業技術學院 校長', '威創科技 總經理'] ;
+        var teacher = ['李家同教授', '楊熙年教授', '陳文村教授', '李家同教授', '黃興燦教授', '陳文村教授', '林永隆教授', '楊熙年教授', '張隆紋教授', '陳文村教授', '陳茂生教授(與工工系合聘)',
+        '陳文村教授', '李家同教授', '李家同教授' ]; 
+        var noImg = "http://placehold.it/200x200";
+        var celebrityImgSrc = '../static/img/celebrity/'
+        var imgSrcs = ['1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.png',    '6.jpg', '8.jpg', '9.png', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.png', '15.jpg', '16.jpg'];
+        for(var j=0; j<imgSrcs.length; j++){
+            if(imgSrcs[j] != noImg)
+                imgSrcs[j] = celebrityImgSrc + imgSrcs[j]; 
+        }
+
+        var i_offset = 0;
+        for(var i=0; i<16; i++){
+            //No no. 7
+            if(i == 6){
+                i_offset = 1;
+                Celebrities.push(new Celebrity(startTime+i+i_offset, names[i], graduate[i], now[i], teacher[i], number[i], imgSrcs[i]));
+            }
+            else 
+                Celebrities.push(new Celebrity(startTime+i+i_offset, names[i], graduate[i], now[i], teacher[i], number[i], imgSrcs[i]));
+        }
+        console.log(Celebrities);   
+
+
+        function getElement(tagName, divClassName){
+            var element_tmp = document.createElement(tagName);
+            element_tmp.className = divClassName;
+            return element_tmp;
+        }
+        function getElementWithContent(tagName, divClassName, innerHTML){ 
+            var element_tmp = getElement(tagName, divClassName);
+            element_tmp.innerHTML = innerHTML;
+            return element_tmp;
+        }
+        var headers = ['第三屆到第一屆 (2003~2001)', '第六屆到第四屆 (2006~2004)', '第十屆到第八屆 (2010~2008)', '第十三屆到第十一屆 (2013-2011)', '第十六屆到第十四屆 (2016-2014)',]
+        var celebrityWall = document.getElementById('celebrityWall');
+
+
+        var all_row_count = 5
+        for(var rowIndex = all_row_count - 1; rowIndex >= 0; rowIndex --){
+            var div_heading = getElement('div', 'col-lg-12 col-md-12 col-sm-12 col-xs-12');
+                var div_title = getElementWithContent('h3', 'bottom-line', headers[rowIndex]);
+            div_heading.appendChild(div_title);
+            celebrityWall.appendChild(div_heading);
+           
+            var peopleCountForOneRow = 3;
+            // for(var count=0; count<peopleCountForOneRow; count++){
+            for(var count=peopleCountForOneRow-1; count>=0; count--){
+
+                var div_celebirtyList = getElement('div', 'col-lg-4 col-md-4 col-sm-4 col-xs-4 text-center');
+                var celebrity_tmp = Celebrities[rowIndex*3 + count];
+
+                var img_picture = getElement('img', 'img-circle img-responsive img-center');
+                img_picture.src = celebrity_tmp.imgSrc;
+
+                var h3_name = getElementWithContent('h3', '', celebrity_tmp.name); 
+                    var small_graduate = getElementWithContent('small', '', celebrity_tmp.graduate);
+                h3_name.appendChild(document.createElement('br'));
+                h3_name.appendChild(small_graduate);
+
+                var p_now = getElementWithContent('p', '', celebrity_tmp.now);
+
+                div_celebirtyList.appendChild(img_picture);
+                div_celebirtyList.appendChild(h3_name);
+                div_celebirtyList.appendChild(p_now);
+                celebrityWall.appendChild(div_celebirtyList);
+            }
+            var br_tmp = getElement('br', '');
+            var br_tmp2 = getElement('br', '');
+            var br_tmp3 = getElement('br', '');
+            celebrityWall.appendChild(br_tmp);
+            celebrityWall.appendChild(br_tmp2);
+            celebrityWall.appendChild(br_tmp3);
+        }
+
+    </script>
+{% endblock %}
+
+{% block content %}
+
+    <!-- Page Content -->
+    <div class="container">
+        <br>
+        <!-- Introduction Row -->
+
+        <!-- Team Members Row -->
+        <div class="row" id="celebrityWall">
+            
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <h4> 參考資料來源: <a href="http://eecs.web.nthu.edu.tw/files/11-1003-152.php?Lang=zh-tw">傑出校友 - 電機資訊學院</a></h4>
+
+    </div>
+    <!-- /.container -->
+
+{% endblock %}

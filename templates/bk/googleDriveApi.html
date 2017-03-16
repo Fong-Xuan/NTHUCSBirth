@@ -1,0 +1,164 @@
+<html>
+  <head>
+    <script type="text/javascript">
+      // Your Client ID can be retrieved from your project in the Google
+      // Developer Console, https://console.developers.google.com
+      var CLIENT_ID = '924749257062-k138l5dmt7gglko7reoknedfogd8eng3.apps.googleusercontent.com';
+
+      var SCOPES = ['https://www.googleapis.com/auth/drive.metadata.readonly'];
+
+      /**
+       * Check if current user has authorized this application.
+       */
+      function checkAuth() {
+        gapi.auth.authorize(
+          {
+            'client_id': CLIENT_ID,
+            'scope': SCOPES.join(' '),
+            'immediate': true
+          }, handleAuthResult);
+      }
+
+      /**
+       * Handle response from authorization server.
+       *
+       * @param {Object} authResult Authorization result.
+       */
+      function handleAuthResult(authResult) {
+        var authorizeDiv = document.getElementById('authorize-div');
+        if (authResult && !authResult.error) {
+          // Hide auth UI, then load client library.
+          authorizeDiv.style.display = 'none';
+          loadDriveApi();
+        } else {
+          // Show auth UI, allowing the user to initiate authorization by
+          // clicking authorize button.
+          authorizeDiv.style.display = 'inline';
+        }
+      }
+
+      /**
+       * Initiate auth flow in response to user clicking authorize button.
+       *
+       * @param {Event} event Button click event.
+       */
+      function handleAuthClick(event) {
+        gapi.auth.authorize(
+          {client_id: CLIENT_ID, scope: SCOPES, immediate: false},
+          handleAuthResult);
+        return false;
+      }
+
+      /**
+       * Load Drive API client library.
+       */
+      function loadDriveApi() {
+        //gapi.client.load('drive', 'v3', listFiles);
+		gapi.client.load('drive', 'v2', retrieveAllFilesInFolder);
+      }
+
+
+	  function yes(){
+		console.log('yes');
+	  }
+      /**
+       * Print files.
+       */
+      function listFiles() {
+        var request = gapi.client.drive.files.list({
+            'pageSize': 50,
+            'fields': "nextPageToken, files(id, name)"
+          });
+		  console.log(gapi);
+          request.execute(function(resp) {
+            appendPre('Files:');
+            var files = resp.files;
+            if (files && files.length > 0) {
+              for (var i = 0; i < files.length; i++) {
+                var file = files[i];
+                appendPre(file.name + ' (' + file.id + ')');
+              }
+            } else {
+              appendPre('No files found.');
+            }
+          });
+      }
+		/**
+		 * Retrieve a list of files belonging to a folder.
+		 *
+		 * @param {String} folderId ID of the folder to retrieve files from.
+		 * @param {Function} callback Function to call when the request is complete.
+		 *
+		 */
+		function retrieveAllFilesInFolder() {
+		  var folderId = "0B5AhwVQHXDENUl9fWkttMG1pcms";
+		  var callback = yes();
+		  console.log(gapi);
+
+		  var retrievePageOfChildren = function(request, result) {
+			request.execute(function(resp) {
+			  result = result.concat(resp.items);
+              for (var i = 0; i < result.length; i++) {
+                var r = result[i];
+				if(i == 0){
+					console.log(r)
+				}
+				//appendPre("https://drive.google.com/uc?id="+ r.id+ ' (' + r.id + ')');
+				appendImage('https://drive.google.com/uc?id='+r.id);
+              }
+			  
+			  var nextPageToken = resp.nextPageToken;
+			  if (nextPageToken) {
+				request = gapi.client.drive.children.list({
+				  'folderId' : folderId,
+				  'pageToken': nextPageToken,
+				});
+				retrievePageOfChildren(request, result);
+			  } else {
+				  console.log('qq');
+			  }
+			});
+		  }
+		  var initialRequest = gapi.client.drive.children.list({
+			  'folderId' : folderId
+			});
+		  retrievePageOfChildren(initialRequest, []);
+		}
+      /**
+       * Append a pre element to the body containing the given message
+       * as its text node.
+       *
+       * @param {string} message Text to be placed in pre element.
+       */
+      function appendPre(message) {
+        var pre = document.getElementById('output');
+        var textContent = document.createTextNode(message + '\n');
+        pre.appendChild(textContent);
+      }
+      function appendImage(src) {
+        var pre = document.getElementById('imageList');
+		var img = document.createElement('img');
+		img.src = src;
+		var li = document.createElement('il');	
+		li.appendChild(img);
+	
+
+        pre.appendChild(li);
+      }
+
+    </script>
+    <script src="https://apis.google.com/js/client.js?onload=checkAuth">
+    </script>
+  </head>
+  <body>
+    <div id="authorize-div" style="display: none">
+      <span>Authorize access to Drive API</span>
+      <!--Button for the user to click to initiate auth sequence -->
+      <button id="authorize-button" onclick="handleAuthClick(event)">
+        Authorize
+      </button>
+    </div>
+    <pre id="output"></pre>
+	<ul id="imageList"></ul>
+  </body>
+</html>
