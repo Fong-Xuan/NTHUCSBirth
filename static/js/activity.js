@@ -30,10 +30,10 @@ activityRows.push(new ActivityRow("各級系友紀念團拍", des, "4/23 9:30~16
 des = "系所友回娘家交流活動及午宴";
 more = "請師長、系友、同學報到領取精美好禮</br>\
 好禮大放送：</br>\
-<span fa fa-1x fa-star></span>40週年紀念對杯</br>\
-<span fa fa-1x fa-star></span> 早到禮園遊券100份（面額NT：100元）</br>\
-<span fa fa-1x fa-star></span> 填問卷+理監事圈選投票禮</br>\
-<span fa fa-1x fa-star></span> 系友惠賜名片禮<br><a>四十週年紀念杯搶先看</a>";
+(1)40週年紀念對杯</br>\
+(2)早到禮園遊券100份（面額NT：100元）</br>\
+(3)填問卷+理監事圈選投票禮</br>\
+(4)系友惠賜名片禮<br><a>四十週年紀念杯搶先看</a>";
 activityRows.push(new ActivityRow("資工40暨資應所系所友回娘家", des, "4/23 9:30~14:00", loc, more));
 
 des = "各級畢業系友預約教室開同學會"
