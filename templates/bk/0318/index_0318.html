@@ -1,0 +1,369 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    {{super()}}
+{% endblock %}
+
+{% block style %}
+    <!-- Custom CSS -->
+    <!--<link href="../static/vendor/magnific-popup/magnific-popup.css" rel="stylesheet">-->
+    <!--<link href="../static/css/modern-business.css" rel="stylesheet">-->
+
+    <!-- My CSS-->
+    <link href="../static/css/myCss.css" rel="stylesheet">
+    <style>
+        @media (max-width:970px){
+            div#cover_photo {
+                background-size:140% 100%;
+            }
+        }
+    </style>
+
+{% endblock %}
+
+{% block script %}
+
+
+    <script src="../static/js/creative.js"></script>
+    <script src="../static/js/activity.js"></script>
+
+    <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAuBwhpirNbGCekUZsZ9f2m1cycXasj8oE&callback=initMap">
+    </script>
+	
+	<script>
+        function initMap() {
+            var latLng = new google.maps.LatLng(24.796170, 120.992239)
+
+            var mapOptions = {
+                center: latLng,
+                zoom: 15,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+            var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+            
+            var marker = new google.maps.Marker({
+                position: latLng,
+                draggable:false,
+                animation:google.maps.Animation.DROP,
+            });
+            marker.setMap(map);
+        }
+    
+    </script>
+{% endblock %}
+
+{% block content %}
+    <header id="header" style="margin-top: -2%" class="">
+        <div id="cover_photo" class="fadeIn-long"></div>
+        <div class="header-content">
+            <div class="header-content-inner fadeIn">
+                <!--http://www.akuziti.com/-->
+                <img class="row" id="cover_words" src = "../static/img/index/titleWords.png" />
+                <br>
+                <br>
+                <br>
+                <a href="#about" id="cover_button" class="row btn btn-xl page-scroll button-orange">Learn More</a>
+
+            </div>
+        </div>
+    </header>
+    <div id="about"></div>
+    <section class="fluid-container bg-orange-light" >
+        <br>
+        <div class="row" id="about-id">
+            <script>
+                function setInfo(element, className){
+                    element.className = className;
+                }
+                function setImg(element, awesomeFont){
+                    element.className = "service-box row";
+                    var img = document.createElement('i');
+                    img.className = "fa fa-5x " + awesomeFont + " text-primary sr-icons hover-size-bigger";
+                    element.appendChild(img);
+                }
+                function setWords(element, words){
+                    element.className = "row";
+                    for(var i in words){
+                        var word = document.createElement('font');
+                        word.innerHTML = words[i];
+                        word.className = "about-words";
+                        if(i == 0)
+                            word.className += " font-bold";
+                        element.appendChild(word);
+                        element.innerHTML += "<br>";
+                    } 
+                }
+                var imgs  = ["fa-clock-o", "fa-map-marker", "fa-facebook-square"];
+                var wordsList = [["09:30~16:00", "04/23", "2017"], ["國立清華大學", "台達館", "中庭"], ["清大資工系", "40週年系慶", "暨資應所系所友", "回娘家"]];
+                var about_id = document.getElementById('about-id'); 
+                var info_class = ["col-lg-2 col-lg-offset-2 col-md-2 col-md-offset-2 col-sm-4 col-xs-12 text-center",
+                                  "col-lg-2 col-lg-offset-1 col-md-2 col-md-offset-1 col-sm-4  col-xs-12 text-center",
+                                  "col-lg-2 col-lg-offset-1  col-md-2 col-md-offset-1  col-sm-4 col-xs-12 text-center"]
+                for(var i=0; i<3; i++){
+                    var about_info_words = document.createElement('div'); 
+                    setWords(about_info_words, wordsList[i]);
+
+                    var about_info_img = document.createElement('div');
+                    setImg(about_info_img, imgs[i]);
+
+                    var about_info = document.createElement('div');
+                    setInfo(about_info, info_class[i]);
+
+                    about_info.appendChild(about_info_img);
+                    about_info.appendChild(about_info_words);
+
+                    about_id.appendChild(about_info);
+                }
+            </script> 
+        </div>
+        <br>
+    </section>
+
+    <br>
+    <div id="schedule"></div>
+    <br>
+    <br>
+    <section class="" >
+        <!-- .row -->
+        <div class="row">
+            <!-- news -->
+            <div class="col-md-6 col-sm-6 col-xs-12">
+                <div class="panel panel-default col-md-7 col-md-offset-4">
+                    <div class="panel-heading bg-purple" style="background:purple">
+                        <h3 class="align-center color-white"><i class="fa fa-fw fa-newspaper-o "></i><b>&nbsp;最新消息</b></h3>
+                    </div>
+                    <div class="panel-body align-center">
+                        <table class="table table-striped table-hover">
+                            <tbody class="NewsTable align-left">
+                                <tr><td><h4>系慶交流活動開放<a href="https://goo.gl/Yqqp7e" target="_blank"><b>報名</b></a>中～<br>精彩演講與活動千萬不可錯過！(含午宴)</h4></td></tr>
+                                <tr><td><h4>青春同學會！<br>歡迎各系友<a href='https://goo.gl/l3I1vD' target="_blank"><b>預約教室</b></a>大開Party小續當年資味！</h4></td></tr>
+                                <tr><td><h4>歡唱卡拉OK開放<a href='https://goo.gl/LONQML' target='_blank'><b>報名</b></a>拉！<br>點歌無限制，邀請您一起讓歌聲縈繞台達！</h4></td></tr>
+                                <tr><td><h4>寶貝也同樂——系列親子活動：<br>故事樂園與魔術氣球表演，開放<a href='https://goo.gl/dfOlCw' target='_blank'><b>報名</b></a>中。</h4></td></tr>
+                                <tr><td><h4>誰是人氣王？邀請您一同華山論「<a href='/voting' target='_blank'><b>讚</b></a>」！<br>神祕好禮等你來拿 ^.<<b>...</b></a>。</h4></td></tr>
+                            </tbody>
+                        </table>
+						<a href="{{url_for('news')}}" class="btn button-orange sr-button">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            <!-- end news -->
+
+            <!-- activity -->
+            <div class="col-md-6 col-sm-6 col-xs-12">
+                <div class="panel panel-default  col-md-7 col-md-offset-1 ">
+                    <div class="panel-heading bg-purple" style="background-color:purple">
+                        <h3 class="align-center color-white"><i class="fa fa-fw fa-gift"></i><b> 系列活動</b></h3>
+                    </div>
+                    <div class="panel-body  align-center">
+                        <table class="table table-striped table-hover" >
+                            <tbody class="NewsTable" id="scheduleBody_index">
+                            </tbody>
+                        </table>
+						<a href="{{url_for('activity')}}" class="btn button-orange sr-button">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            <!-- end activity -->
+        </div>
+        <!-- /.row -->
+    </section>
+
+    <br>
+    <div id="services"></div>
+    <br>
+    <br>
+    <section class="fluid-container bg-purple-light" >
+        <div class="container">
+            <!--<div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="text-primary"><b>歡慶40</b></h2>
+                    <br>
+                </div>
+            </div>-->
+            <br>
+            <br>
+            <div class="row">
+                <div class="col-lg-3  col-md-3  col-sm-3 col-xs-6 align-center">
+                    <div class="service-box">
+                        <a href="{{url_for('celebrity')}}">
+                            <i class="fa fa-5x fa-diamond text-primary sr-icons  hover-size-dark-purple "></i>
+                            <h3 class="text-primary font-bold hover-size-dark-purple "><b>風雲人物</b></h3>
+                        </a>
+                        <br>
+                        <p class="color-white">
+                           清華資工系四十年來<br>
+                           培育無數優秀的人才<br>
+                           造福社會、榮耀清華<br>
+                           來認識傑出系友吧！<br>
+                        </p>
+                        <br>
+                        <br>
+						<a href="{{url_for('celebrity')}}" class="btn color-purple border-purple sr-button hover-color-white">Learn More</a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-3  col-xs-6 text-center">
+                    <div class="service-box">
+                        <a href="{{url_for('history')}}">
+                        <i class="fa fa-5x fa-paper-plane text-primary sr-icons hover-size-dark-purple "></i>
+                        <h3 class="text-primary font-bold hover-size-dark-purple "><b>歷史沿革</b></h3>
+                        </a>
+                        <br>
+                        <p class="color-white">
+                           四十年歲月風風雨雨<br>
+                           多少人的青春和年華<br>
+                           你夠認識清華資工嗎<br>
+                           一起看她的前世今生<br>
+                        </p>
+                        <br>
+                        <br>
+						<a href="{{url_for('history')}}" class="btn color-purple border-purple sr-button hover-color-white">Learn More</a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 text-center">
+                    <div class="service-box">
+                        <a href="{{url_for('yearPhotos')}}">
+                        <i class="fa fa-5x fa-camera text-primary sr-icons hover-size-dark-purple "></i>
+                        <h3 class="hover-size-dark-purple text-primary font-bold"><b>年度合照</b></h3>
+                        </a>
+                        <br>
+                        <p class="color-white">
+                           每年系慶都十分盛大<br>
+                           邀請系友們共襄盛舉<br>
+                           就讓我們搭時光機器<br>
+                           細細回顧歡樂的時光<br>
+                        </p>
+                        <br>
+                        <br>
+						<a href="{{url_for('yearPhotos')}}" class="btn color-purple border-purple sr-button hover-color-white">Learn More</a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 align-center">
+                    <div class="service-box">
+                        <a href="{{url_for('voting')}}">
+                            <i class=" hover-size-dark-purple fa fa-5x fa-heart color-purple sr-icons"></i>
+                            <h3 class="hover-size-dark-purple text-primary font-bold"><b>人氣競賽</b></h3>
+                        </a>
+                        <br>
+                        <p class="color-white">
+                           盛大系慶可不只這樣<br>
+                           今年保證您賓至如歸<br>
+                           除了精彩活動饗宴外<br>
+                           更要您成為人氣之王<br>
+                        </p>
+                        <br>
+                        <br>
+						<a href="{{url_for('voting')}}" class="btn color-purple border-purple sr-button hover-color-white">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+    </section>
+    <br>
+    <br>
+    <div id="album"></div>
+    <br>
+    <br>
+    <section class="no-padding container border-purple-light">
+        <div class="container text-center">
+            <div class="call-to-action">
+                <br>
+                <br>
+                <br>
+                <h2 class="color-orange"><b>那些年...我們的回憶</b></h2>
+                <br>
+                <br>
+            </div>
+        </div>
+        <div class="container">
+            <div id="myCarousel" class="carousel slide album_photos img-responsive container" style="padding: 0px 15px 0px 15px">
+                <ol class="carousel-indicators">
+
+                    {% set size = photos.length %}
+                    {% for number in range(6) %}
+                        {% if number == 0 %}
+                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                        {% else %}
+                        <li data-target="#myCarousel" data-slide-to="{{number}}" class=""></li>
+                        {% endif %}
+                    {% endfor %}
+                </ol>
+                <div class="carousel-inner">
+                    {% if photos %}
+                        {% for photo in photos %}
+                            {% if loop.index == 1 %}
+                            <div class="item active">
+                            {% else %}
+                            <div class="item">
+                            {% endif %}
+                                <div class="fill img-responsive album_photos" style="background-image:url('{{photo}}'); background-size: 100% 100%; background-position:center;background-repeat:no-repeat"></div>
+                                <div class="carousel-caption">
+                                </div>
+                            </div>
+                        {% endfor %}
+
+                    {% endif %}
+                </div>
+
+                <!-- Controls -->
+                <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                    <span class="icon-prev " style="font-size: 70px; font-weight: bold"></span>
+                </a>
+                <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                    <span class="icon-next" style="font-size: 70px; font-weight: bold"></span>
+                </a>
+
+            </div>
+            
+
+        </div>
+        <div class="container text-center">
+            <div class="call-to-action">
+                <br>
+                <br>
+                <a href="{{url_for('album')}}" class="btn btn-default btn-xl bg-orange color-purple sr-button hover-color-white">More</a>
+                <br>
+                <br>
+            </div>
+        </div>
+    </section>
+
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <a name="contact" />
+    <section id="contact" class="bg-orange-light">
+        <br>
+        <br>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 col-lg-offset-1 text-center">
+                    <h2 class="color-white font-bold">聯絡我們</h2>
+                    <br>
+                    <br>
+                </div>
+                <div class="col-lg-4  text-center">
+                    <i class="fa fa-map fa-4x sr-contact color-white" ></i>
+                    <p class="color-white">清大台達館</p>
+                </div>
+                <div class="col-lg-4  text-center">
+                    <i class="fa fa-phone fa-4x sr-contact color-white"></i>
+                    <p><a class="color-white" href="tel:03-5714787">03-5714787</a></p>
+                </div>
+                <div class="col-lg-4 text-center">
+                    <i class="fa fa-envelope fa-4x sr-contact color-white" ></i>
+                    <p><a class="color-white" href="mailto:office@cs.nthu.edu.tw">office@cs.nthu.edu.tw</a></p>
+                </div>
+                <div class="col-lg-10 col-lg-offset-1 text-center">
+					<div id="map"  class="col-lg-12" style="height:500px">123</div>
+                </div>
+            </div>
+            <br>
+            <br>
+        </div>
+    </section>
+{% endblock %}

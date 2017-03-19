@@ -24,7 +24,7 @@ def index():
     img_loc = "../static/img/photos/"
 
     photos = [(img_loc+'p'+str(index)+'.jpg') for index in range(1, 7)]
-    return render_template('index.html', tabName="清大資工40周年慶 - 首頁", photos=photos, index=True)
+    return render_template('index.html', tabName="清大資工40週年慶 - 首頁 NTHU CS 40 Anniversary", photos=photos, index=True)
 
 @app.route("/activity")
 def activity():
